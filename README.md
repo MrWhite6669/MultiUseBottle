@@ -37,4 +37,5 @@ Add's realistic food and drinks for 7 days to die! Started as a Multi-Use bottle
 #### New:
 #### Changed:
 #### Fixed:
+- Fixed stats not displaying correctly
 - Disallowed drinking special drinks while exahusted
