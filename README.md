@@ -42,5 +42,6 @@ Add's realistic food and drinks for 7 days to die! Started as a Multi-Use bottle
 - Added dysentery risk to uncooked fries and changed their value to 7
 - Balanced trader and loot tables to acommodate 69'r
 #### Fixed:
+- Fixed stats not displaying correctly
 - Disallowed drinking special drinks while exahusted
 - Fixed localization issues
