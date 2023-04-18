@@ -50,6 +50,13 @@ MHERMIT_Bottle2L14,items,Food,New,1/4 2L Bottle of Hermit's Juice
 MHERMIT_Bottle2L6X,items,Food,New,Six Pack of 2L Hermit's Juice
 MHERMIT_Can,items,Food,New,Can of Hermit's Juice
 
+M69R_Bottle2L,items,Food,New,Full 2L Bottle of 69'r
+M69R_Bottle2L34,items,Food,New,3/4 2L Bottle of 69'r
+M69R_Bottle2L24,items,Food,New,2/4 2L Bottle of 69'r
+M69R_Bottle2L14,items,Food,New,1/4 2L Bottle of 69'r
+M69R_Bottle2L6X,items,Food,New,Six Pack of 2L 69'r
+M69R_Can,items,Food,New,Can of 69'r
+
 MChickenRaw,items,Food,New,Raw Chicken
 MChickenMeatRaw,items,Food,New,Raw Chicken Meat
 MChickenLegRoast,items,Food,New,Roast Chicken Leg
@@ -60,15 +67,16 @@ MChickenRoast14,items,Food,New,1/4 Roast Chicken
 MFriesUncooked,items,Food,New,Raw Fries
 MFriesCooked,items,Food,New,Fries
 
-MEmpty_Bottle2LDesc,items,Resources,New,This bottle could probably hold a lot more than an empty glass.
-MFilthy_Bottle2LDesc,items,Food,New,A whole lot of murky water, not save to drink(unless you have to)!
-MWater_Bottle2LDesc,items,Food,New,A whole lot of water, refreshing!
-MCOKK_Bottle2LDesc,items,Food,New,Tasty caffienated drink with a lot of sugar that make's you a little speedy (Beware of addiction).
-M4EYES_Bottle2LDesc,items,Food,New,Drink for Nerds! This sugary drink with vitamins will make your nerd craft much faster!
-MBFKICK_Bottle2LDesc,items,Food,New,Have you ever wondered how a buffalo's kick feels like? Now your enemies will know!
-MJGNUT_Bottle2LDesc,items,Food,New,This drink will remake you into an unmovable object. No more holes in your base! Fill them with your body!
-MHERMIT_Bottle2LDesc,items,Food,New,When you drink this you will suddenly feel like you will acomplish anything.
-MCOKKS_CanDesc,items,Food,New,With the power of this drink you could rule the world. If it didnt kill you after 4 minutes of course.
+MEmpty_Bottle2LDesc,items,Resources,New,"This bottle could probably hold a lot more than an empty glass."
+MFilthy_Bottle2LDesc,items,Food,New,"A whole lot of murky water, not save to drink(unless you have to)!"
+MWater_Bottle2LDesc,items,Food,New,"A whole lot of water, refreshing!"
+MCOKK_Bottle2LDesc,items,Food,New,"Tasty caffienated drink with a lot of sugar that make's you a little speedy (Beware of addiction).\n\nRun and Walk speed --- +40%\nStamina regen --- +180%\nAttack speed --- +80%\nDuration --- 30-60 seconds\nExahustion --- 5 minutes"
+M4EYES_Bottle2LDesc,items,Food,New,"Drink for Nerds! This sugary drink with vitamins will make your nerd craft much faster!\n\nCrafting time --- -80%\nDuration --- 30 seconds\nExahustion --- 15 minutes"
+MBFKICK_Bottle2LDesc,items,Food,New,"Have you ever wondered how a buffalo's kick feels like? Now your enemies will know!\n\nBlock and entity damage --- +100%\nDuration --- 1-4 minutes\nExahustion --- 10 minutes"
+MJGNUT_Bottle2LDesc,items,Food,New,"This drink will remake you into an unmovable object. No more holes in your base! Fill them with your body!\n\nMax health --- +100%\nHealth regen --- 2/second\nMovement --- -90%\nDuration --- 2 - 8 minutes\nExahustion --- 10 minutes"
+MHERMIT_Bottle2LDesc,items,Food,New,"When you drink this you will suddenly feel like you will acomplish anything.\n\nLoot gamestage --- +100% \nDuration --- 4 minutes\nExahustion --- 40 minutes"
+M69R_Bottle2LDesc,items,Food,New,"I am a dwarf and im digging a hole, diggy diggy hole, digging a hole!\n\nBlock damage --- +100%\nHarvest count --- +50%\nStamina regen --- +80%\nDuration --- 10 minutes\nExahustion --- 15 minutes"
+MCOKKS_CanDesc,items,Food,New,"With the power of this drink you could rule the world. If it didnt kill you after 4 minutes of course.\n\nRun and Walk speed --- +100%\nStamina regen --- +1000%\nAttack speed --- +250%\nDuration --- 4 minutes\nExahustion --- Death"
 
 MCOKK_Bottle2L6XDesc,items,Food,New,Contains 6 bottles of 2L COKK.
 MWater_Bottle2L6XDesc,items,Food,New,Contains 6 bottles of 2L Water.
@@ -76,6 +84,7 @@ MJGNUT_Bottle2L6XDesc,items,Food,New,Contains 6 bottles of 2L JuggerNut.
 M4EYES_Bottle2L6XDesc,items,Food,New,Contains 6 bottles of 2L Foureyes.
 MBFKICK_Bottle2L6XDesc,items,Food,New,Contains 6 bottles of 2L Buffalo Kick.
 MHERMIT_Bottle2L6XDesc,items,Food,New,Contains 6 bottles of 2L Hermit's Juice.
+M69R_Bottle2L6XDesc,items,Food,New,Contains 6 bottles of 2L 69'r.
 
 MChickenRawDesc,items,Food,New,A raw Chicken.Probably not safe to eat.
 MChickenMeatRawDesc,items,Food,New,Raw chicken meat.Probably not safe to eat.
@@ -83,32 +92,36 @@ MChickenLegRoastDesc,items,Food,New,Delicious roast chicken leg.
 MChickenRoastDesc,items,Food,New,This delicious looking roast chicken will fill your hunger for DAYS!
 MCookingOilDesc,items,Food,New,Oil used for cooking more complex foods.
 MFriesUncookedDesc,items,Food,New,Sliced potato in the shape of fries.
-MFriesCookedDesc,items,Food,New,Delicious looking fries, probably better with some meat.
+MFriesCookedDesc,items,Food,New,"Delicious looking fries, probably better with some meat."
 
 buffCOKKName,buffs,Buff,New,High on COKK
-buffCOKKDesc,buffs,Buff,New,You are high on COKK, you get a high boost in run and melee speed and a big stamina boost, but only for a very short duration.
+buffCOKKDesc,buffs,Buff,New,"You are high on COKK, you get a high boost in run and melee speed and a big stamina boost, but only for a very short duration."
 buffCOKKTooltip,buffs,Buff,New,You are high on COKK..
 
 buffCOKKSName,buffs,Buff,New,PURE POWER
-buffCOKKSDesc,buffs,Buff,New,THE GODS HAS BLESSED YOU WITH PURE POWER BUT ONLY FOR A SHORT TIME UNTIL YOU DIE
+buffCOKKSDesc,buffs,Buff,New,"THE GODS HAS BLESSED YOU WITH PURE POWER BUT ONLY FOR A SHORT TIME UNTIL YOU DIE"
 buffCOKKSTooltip,buffs,Buff,New,I FEEL THE POWER!
 
 buffJGNUTName,buffs,Buff,New,JuggerNut
-buffJGNUTDesc,buffs,Buff,New,You are an unmovable object now, your health is doublet at the cost of movement speed.
+buffJGNUTDesc,buffs,Buff,New,"You are an unmovable object now, your health is doubled at the cost of movement speed."
 buffJGNUTTooltip,buffs,Buff,New,YOU SHALL NOT PASS
 
 buff4EYESName,buffs,Buff,New,Foureyes
-buff4EYESDesc,buffs,Buff,New,You have your head filled with new ideas and are crafting 2 times faster now!
+buff4EYESDesc,buffs,Buff,New,"You have your head filled with new ideas and are crafting 2 times faster now!"
 buff4EYESTooltip,buffs,Buff,New,Maybe i should craft something now..
 
 buffBFKICKName,buffs,Buff,New,Buffalo Kick
-buffBFKICKDesc,buffs,Buff,New,Punch like a buffalo, kick like a buffalo! (If youre also making sounds like a buffalo please contact your doctor before further use)
+buffBFKICKDesc,buffs,Buff,New,"Punch like a buffalo, kick like a buffalo! (If youre also making sounds like a buffalo please contact your doctor before further use)"
 buffBFKICKTooltip,buffs,Buff,New,Kono Pawa!
 
 buffHERMITName,buffs,Buff,New,Hermit's Juice
-buffHERMITDesc,buffs,Buff,New,You feel like you could acomplish anything!
-buffHERMITTooltip,buffs,Buff,New,You feel like you could acomplish anything!
+buffHERMITDesc,buffs,Buff,New,"You feel like you could acomplish anything!"
+buffHERMITTooltip,buffs,Buff,New,"You feel like you could acomplish anything!"
+
+buff69RName,buffs,Buff,New,69'r
+buff69RDesc,buffs,Buff,New,"Miners of the mine rejoice! Sing, sing, sing with me!"
+buff69RTooltip,buffs,Buff,New,"Diggy diggy hole, diggy diggy hole..."
 
 debuffExahustionName,buffs,Buff,New,Exahustion
-debuffExahustionDesc,buffs,Buff,New,Maybe you should rest before drinking any more of those drinks.
+debuffExahustionDesc,buffs,Buff,New,"Maybe you should rest before drinking any more of those drinks."
 debuffExahustionTooltip,buffs,Buff,New,I feel tired

@@ -52,6 +52,13 @@
             <item name="MHERMIT_Bottle2L24" count="1,1" prob=".3"/>
             <item name="MHERMIT_Bottle2L14" count="1,1" prob=".4"/>
         </lootgroup>
+
+        <lootgroup name="M69R" count="1">
+            <item name="M69R_Bottle2L" count="1,1" prob=".1"/>
+            <item name="M69R_Bottle2L34" count="1,1" prob=".2"/>
+            <item name="M69R_Bottle2L24" count="1,1" prob=".3"/>
+            <item name="M69R_Bottle2L14" count="1,1" prob=".4"/>
+        </lootgroup>
     <!--Drink Groups-->
 
         <lootgroup name="MTrashDrinks" count="1">
@@ -64,18 +71,20 @@
 
         <lootgroup name="MSpecialBottles" count="1">
             <item group="MCOKK" count="1" prob=".2"/>
-            <item group="MJGNUT" count="1,1" prob=".3"/>
+            <item group="MJGNUT" count="1,1" prob=".2"/>
             <item group="M4EYES" count="1,1" prob=".1"/>
-            <item group="MBFKICK" count="1,1" prob=".3"/>
+            <item group="MBFKICK" count="1,1" prob=".2"/>
             <item group="MHERMIT" count="1,1" prob=".1"/>
+            <item group="M69R" count="1,1" prob=".2"/>
         </lootgroup>
 
         <lootgroup name="MSpecialCans" count="1">
             <item name="MCOKK_Can" count="1" prob=".2"/>
-            <item name="MJGNUT_Can" count="1,1" prob=".3"/>
+            <item name="MJGNUT_Can" count="1,1" prob=".2"/>
             <item name="M4EYES_Can" count="1,1" prob=".1"/>
-            <item name="MBFKICK_Can" count="1,1" prob=".3"/>
+            <item name="MBFKICK_Can" count="1,1" prob=".2"/>
             <item name="MHERMIT_Can" count="1,1" prob=".1"/>
+            <item name="M69R_Can" count="1,1" prob=".2"/>
         </lootgroup>
 
         <lootgroup name="MSpecialDrinks" count="1">
@@ -85,10 +94,11 @@
 
         <lootgroup name="MSpecialDrinksX6" count="1">
             <item name="MCOKK_Bottle2L6X" count="1,1" prob=".2"/>
-            <item name="MJGNUT_Bottle2L6X" count="1,1" prob=".3"/>
+            <item name="MJGNUT_Bottle2L6X" count="1,1" prob=".2"/>
             <item name="M4EYES_Bottle2L6X" count="1,1" prob=".1"/>
-            <item name="MBFKICK_Bottle2L6X" count="1,1" prob=".3"/>
+            <item name="MBFKICK_Bottle2L6X" count="1,1" prob=".2"/>
             <item name="MHERMIT_Bottle2L6X" count="1,1" prob=".1"/>
+            <item name="M69R_Bottle2L6X" count="1,1" prob=".2"/>
         </lootgroup>
     </insertAfter>
 
