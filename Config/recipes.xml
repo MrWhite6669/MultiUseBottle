@@ -4,9 +4,6 @@
     <setattribute xpath="/recipes/recipe[@name='foodSteakAndPotato']/ingredient[@name='foodCropPotato']" name="name">MFriesUncooked</setattribute>
 
 
-    <insertBefore xpath="/recipes/recipe[@name='resourceMilitaryFiber']">
-        <recipe name="resourceWater" count="1" tooltip="MScrapWaterTooltip" always_unlocked="true" tags="salvageScrap"> <wildcard_forge_category /> </recipe>
-    </insertBefore>
 	<append xpath="/recipes">
         <recipe name="MWater_Bottle2L" count="1" craft_time="45" craft_area="campfire"  craft_tool="toolCookingPot">
             <ingredient name="MFilthy_Bottle2L" count="1"/>
