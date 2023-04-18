@@ -1,3 +1,4 @@
+![image](https://user-images.githubusercontent.com/86468001/232793217-983830de-891a-402d-8ebf-eec6f8ed2257.png)
 # White's Realistic Food And Drinks
 Add's realistic food and drinks for 7 days to die! Started as a Multi-Use bottle that you can drink from and developed into much more!
 
@@ -35,8 +36,11 @@ Add's realistic food and drinks for 7 days to die! Started as a Multi-Use bottle
 ### 0.2
 
 #### New:
+- Added a new mining drink called 69'r
 #### Changed:
 - Changed water bottle value to 15 from 30
 - Added dysentery risk to uncooked fries and changed their value to 7
+- Balanced trader and loot tables to acommodate 69'r
 #### Fixed:
 - Disallowed drinking special drinks while exahusted
+- Fixed localization issues
