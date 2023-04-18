@@ -38,6 +38,8 @@ Add's realistic food and drinks for 7 days to die! Started as a Multi-Use bottle
 #### New:
 - Added a new mining drink called 69'r
 #### Changed:
+- Changed water bottle value to 15 from 30
+- Added dysentery risk to uncooked fries and changed their value to 7
 - Balanced trader and loot tables to acommodate 69'r
 #### Fixed:
 - Disallowed drinking special drinks while exahusted
