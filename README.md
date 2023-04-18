@@ -36,5 +36,7 @@ Add's realistic food and drinks for 7 days to die! Started as a Multi-Use bottle
 
 #### New:
 #### Changed:
+- Changed water bottle value to 15 from 30
+- Added dysentery risk to uncooked fries and changed their value to 7
 #### Fixed:
 - Disallowed drinking special drinks while exahusted
