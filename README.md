@@ -13,15 +13,15 @@ Add's realistic food and drinks for 7 days to die! Started as a Multi-Use bottle
 
 ### 0.1
 #### New:
--- Added Multi-Use water bottle
--- Added recipes for boiling water
--- Added MU special drinks including SU canned versions
--- Added MU Roast Chicken
--- Added butchering whole chicken into chicken meat
--- Added Roasted chicken meat
--- Added scavenge-only vegetable oil for use in roasting
--- Added fries
+- Added Multi-Use water bottle
+- Added recipes for boiling water
+- Added MU special drinks including SU canned versions
+- Added MU Roast Chicken
+- Added butchering whole chicken into chicken meat
+- Added Roasted chicken meat
+- Added scavenge-only vegetable oil for use in roasting
+- Added fries
 
 #### Changed:
--- Chickens no longer give normal meat, instead you will get a whole chicken when you finish butchering
--- You can slice a potato into uncooked fries
+- Chickens no longer give normal meat, instead you will get a whole chicken when you finish butchering
+- You can slice a potato into uncooked fries
