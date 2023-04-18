@@ -36,6 +36,9 @@ Add's realistic food and drinks for 7 days to die! Started as a Multi-Use bottle
 ### 0.2
 
 #### New:
+- Added a new mining drink called 69'r
 #### Changed:
+- Balanced trader and loot tables to acommodate 69'r
 #### Fixed:
 - Disallowed drinking special drinks while exahusted
+- Fixed localization issues
