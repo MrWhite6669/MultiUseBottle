@@ -179,5 +179,32 @@
 			<passive_effect name="LootGamestage" operation="perc_add" value="1"/>
 		</effect_group>
 	</buff>
+
+<!--Buff 69'r-->
+    <buff name="buff69R" name_key="buff69RName" description_key="buff69RDesc" tooltip_key="buff69RTooltip" icon="ui_game_symbol_mining" icon_color="161, 22, 0">
+		<stack_type value="replace"/><duration value="0"/>
+		<display_value value=".buff69RDisplay"/><display_value_format value="time"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buff69RDuration" operation="subtract" value="@$MetabolismDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buff69RDisplay" operation="set" value="@$buff69RDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buff69RDisplay" operation="divide" value="@$MetabolismDuration"/>
+		</effect_group>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buff69R">
+				<requirement name="CVarCompare" cvar="$buff69RDuration" operation="LTE" value="0"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buff69RDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buff69RDuration" operation="set" value="0"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="debuffExahustion"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$debuffExahustionDuration" operation="set" value="900"/>
+		</effect_group>
+
+		<effect_group>
+			<passive_effect name="BlockDamage" operation="perc_add" value="1"/>
+            <passive_effect name="HarvestCount" operation="perc_add" value=".5" tags="oreWoodHarvest"/>
+            <passive_effect name="WaterLossPerStaminaPointGained" operation="perc_add" value=".8"/>
+		</effect_group>
+	</buff>
+	
 </append>
 </configs>
