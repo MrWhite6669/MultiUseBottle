@@ -217,7 +217,7 @@
                 <property name="DisplayType" value="water"/>
                 <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
                 <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
-                <property name="Material" value="MWaterFull"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
                 <property name="Stacknumber" value="1"/>
                 <property name="Weight" value="10"/>
                 <property name="EconomicValue" value="10"/>
