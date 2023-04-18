@@ -25,3 +25,9 @@ Add's realistic food and drinks for 7 days to die! Started as a Multi-Use bottle
 #### Changed:
 - Chickens no longer give normal meat, instead you will get a whole chicken when you finish butchering
 - You can slice a potato into uncooked fries
+
+### 0.1.1
+#### Changed:
+- Removed non-functioning water cooler for now
+- Balanced some loot chances
+- Balanced special drink buffs
