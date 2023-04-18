@@ -387,6 +387,7 @@
                 <property name="EconomicValue" value="250"/>
                 <property name="EconomicBundleSize" value="1"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -427,6 +428,7 @@
                 <property name="EconomicBundleSize" value="1"/>
                 <property name="SellableToTrader" value="false"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -467,6 +469,7 @@
                 <property name="EconomicBundleSize" value="1"/>
                 <property name="SellableToTrader" value="false"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -507,6 +510,7 @@
                 <property name="EconomicBundleSize" value="1"/>
                 <property name="SellableToTrader" value="false"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -547,6 +551,7 @@
                 <property name="EconomicBundleSize" value="1"/>
                 <property name="SellableToTrader" value="false"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -609,6 +614,7 @@
                 <property name="EconomicValue" value="250"/>
                 <property name="EconomicBundleSize" value="1"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -650,6 +656,7 @@
                 <property name="EconomicBundleSize" value="1"/>
                 <property name="SellableToTrader" value="false"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -690,6 +697,7 @@
                 <property name="EconomicBundleSize" value="1"/>
                 <property name="SellableToTrader" value="false"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -730,6 +738,7 @@
                 <property name="EconomicBundleSize" value="1"/>
                 <property name="SellableToTrader" value="false"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -770,6 +779,7 @@
                 <property name="EconomicBundleSize" value="1"/>
                 <property name="SellableToTrader" value="false"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -831,6 +841,7 @@
                 <property name="EconomicValue" value="500"/>
                 <property name="EconomicBundleSize" value="1"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -871,6 +882,7 @@
                 <property name="EconomicBundleSize" value="1"/>
                 <property name="SellableToTrader" value="false"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -911,6 +923,7 @@
                 <property name="EconomicBundleSize" value="1"/>
                 <property name="SellableToTrader" value="false"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -951,6 +964,7 @@
                 <property name="EconomicBundleSize" value="1"/>
                 <property name="SellableToTrader" value="false"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -991,6 +1005,7 @@
                 <property name="EconomicBundleSize" value="1"/>
                 <property name="SellableToTrader" value="false"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -1053,6 +1068,7 @@
                 <property name="EconomicValue" value="250"/>
                 <property name="EconomicBundleSize" value="1"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -1093,6 +1109,7 @@
                 <property name="EconomicBundleSize" value="1"/>
                 <property name="SellableToTrader" value="false"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -1133,6 +1150,7 @@
                 <property name="EconomicBundleSize" value="1"/>
                 <property name="SellableToTrader" value="false"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -1173,6 +1191,7 @@
                 <property name="EconomicBundleSize" value="1"/>
                 <property name="SellableToTrader" value="false"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -1213,6 +1232,7 @@
                 <property name="EconomicBundleSize" value="1"/>
                 <property name="SellableToTrader" value="false"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -1275,6 +1295,7 @@
             <property name="EconomicValue" value="1000"/>
             <property name="EconomicBundleSize" value="1"/>
             <property class="Action0">
+                <requirement name="NotHasBuff" buff="debuffExahustion"/>
                 <property name="Class" value="Eat"/>
                 <property name="Delay" value="0"/>
                 <property name="Sound_start" value="player_drinking"/>
@@ -1315,6 +1336,7 @@
             <property name="EconomicBundleSize" value="1"/>
             <property name="SellableToTrader" value="false"/>
             <property class="Action0">
+                <requirement name="NotHasBuff" buff="debuffExahustion"/>
                 <property name="Class" value="Eat"/>
                 <property name="Delay" value="0"/>
                 <property name="Sound_start" value="player_drinking"/>
@@ -1355,6 +1377,7 @@
             <property name="EconomicBundleSize" value="1"/>
             <property name="SellableToTrader" value="false"/>
             <property class="Action0">
+                <requirement name="NotHasBuff" buff="debuffExahustion"/>
                 <property name="Class" value="Eat"/>
                 <property name="Delay" value="0"/>
                 <property name="Sound_start" value="player_drinking"/>
@@ -1395,6 +1418,7 @@
             <property name="EconomicBundleSize" value="1"/>
             <property name="SellableToTrader" value="false"/>
             <property class="Action0">
+                <requirement name="NotHasBuff" buff="debuffExahustion"/>
                 <property name="Class" value="Eat"/>
                 <property name="Delay" value="0"/>
                 <property name="Sound_start" value="player_drinking"/>
@@ -1435,6 +1459,7 @@
                 <property name="EconomicBundleSize" value="1"/>
                 <property name="SellableToTrader" value="false"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
@@ -1498,6 +1523,7 @@
                 <property name="EconomicBundleSize" value="1"/>
                 <property name="SellableToTrader" value="false"/>
                 <property class="Action0">
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
                     <property name="Class" value="Eat"/>
                     <property name="Delay" value="0"/>
                     <property name="Sound_start" value="player_drinking"/>
