@@ -4,9 +4,6 @@
     <setattribute xpath="/recipes/recipe[@name='foodSteakAndPotato']/ingredient[@name='foodCropPotato']" name="name">MFriesUncooked</setattribute>
 
 
-    <insertBefore xpath="/recipes/recipe[@name='resourceMilitaryFiber']">
-        <recipe name="resourceWater" count="1" tooltip="MScrapWaterTooltip" always_unlocked="true" tags="salvageScrap"> <wildcard_forge_category /> </recipe>
-    </insertBefore>
 	<append xpath="/recipes">
         <recipe name="MWater_Bottle2L" count="1" craft_time="45" craft_area="campfire"  craft_tool="toolCookingPot">
             <ingredient name="MFilthy_Bottle2L" count="1"/>
@@ -38,11 +35,7 @@
             <ingredient name="MChickenMeatRaw" count="1"/>
             </recipe>
 
-        <recipe name="MWater_Bottle2L" count="1" material_based="true" craft_time="120" craft_area="cooler">
-            <ingredient name="unit_water" count="4"/>
-	        <ingredient name="unit_scrapPolymer" count="15"/>
-            </recipe>
-
+        <!-- TODO: Add more packing variants -->
         <recipe name="MCOKK_Bottle2L6X" count="1" craft_time="60">
 	        <ingredient name="MCOKK_Bottle2L" count="6"/>
             <ingredient name="resourceScrapPolymers" count="5"/>
