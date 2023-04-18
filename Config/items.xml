@@ -70,6 +70,7 @@
                     <requirement name="NotHasBuff" buff="buffIsOnFire"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+                    <display_value name="dWaterAmountAdd" value="10"/>
                     <display_value name="dStaminaRegen" value=".15"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 
@@ -111,6 +112,7 @@
                     <requirement name="NotHasBuff" buff="buffIsOnFire"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+                    <display_value name="dWaterAmountAdd" value="10"/>
                     <display_value name="dStaminaRegen" value=".15"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 
@@ -152,6 +154,7 @@
                     <requirement name="NotHasBuff" buff="buffIsOnFire"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+                    <display_value name="dWaterAmountAdd" value="10"/>
                     <display_value name="dStaminaRegen" value=".15"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 
@@ -193,6 +196,7 @@
                     <requirement name="NotHasBuff" buff="buffIsOnFire"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+                    <display_value name="dWaterAmountAdd" value="10"/>
                     <display_value name="dStaminaRegen" value=".15"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 
@@ -236,6 +240,7 @@
                     <requirement name="NotHasBuff" buff="buffIsOnFire"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="30"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".15"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                 </effect_group>
@@ -271,6 +276,7 @@
                     <requirement name="NotHasBuff" buff="buffIsOnFire"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="30"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".15"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                 </effect_group>
@@ -306,6 +312,7 @@
                     <requirement name="NotHasBuff" buff="buffIsOnFire"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="30"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".15"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                 </effect_group>
@@ -341,6 +348,7 @@
                     <requirement name="NotHasBuff" buff="buffIsOnFire"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="30"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".15"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                 </effect_group>
@@ -400,6 +408,7 @@
                     <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCOKKDuration" operation="add" value="30"/>
@@ -441,6 +450,7 @@
                     <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCOKKDuration" operation="add" value="30"/>
@@ -482,6 +492,7 @@
                     <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCOKKDuration" operation="add" value="30"/>
@@ -523,6 +534,7 @@
                     <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCOKKDuration" operation="add" value="30"/>
@@ -565,6 +577,7 @@
                     <requirement name="NotHasBuff" buff="buffCOKK"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCOKKDuration" operation="add" value="30"/>
@@ -628,6 +641,7 @@
                     <requirement name="NotHasBuff" buff="buffJGNUT"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffJGNUTDuration" operation="add" value="120"/>
@@ -669,6 +683,7 @@
                     <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffJGNUTDuration" operation="add" value="120"/>
@@ -710,6 +725,7 @@
                     <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffJGNUTDuration" operation="add" value="120"/>
@@ -751,6 +767,7 @@
                     <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffJGNUTDuration" operation="add" value="120"/>
@@ -792,6 +809,7 @@
                     <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffJGNUTDuration" operation="add" value="120"/>
@@ -854,6 +872,7 @@
                     <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buff4EYESDuration" operation="add" value="30"/>
@@ -895,6 +914,7 @@
                     <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buff4EYESDuration" operation="add" value="30"/>
@@ -936,6 +956,7 @@
                     <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buff4EYESDuration" operation="add" value="30"/>
@@ -977,6 +998,7 @@
                     <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buff4EYESDuration" operation="add" value="30"/>
@@ -1019,6 +1041,7 @@
                     <requirement name="NotHasBuff" buff="buff4EYES"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buff4EYESDuration" operation="add" value="30"/>
@@ -1081,6 +1104,7 @@
                     <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBFKICKDuration" operation="add" value="60"/>
@@ -1122,6 +1146,7 @@
                     <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBFKICKDuration" operation="add" value="60"/>
@@ -1163,6 +1188,7 @@
                     <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBFKICKDuration" operation="add" value="60"/>
@@ -1204,6 +1230,7 @@
                     <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBFKICKDuration" operation="add" value="60"/>
@@ -1246,6 +1273,7 @@
                     <requirement name="NotHasBuff" buff="buffBFKICK"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBFKICKDuration" operation="add" value="60"/>
@@ -1308,6 +1336,7 @@
                 <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                <display_value name="dWaterAmountAdd" value="15"/>
                 <display_value name="dStaminaRegen" value=".10"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHERMITDuration" operation="add" value="90"/>
@@ -1349,6 +1378,7 @@
                 <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                <display_value name="dWaterAmountAdd" value="15"/>
                 <display_value name="dStaminaRegen" value=".10"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHERMITDuration" operation="add" value="90"/>
@@ -1390,6 +1420,7 @@
                 <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                <display_value name="dWaterAmountAdd" value="15"/>
                 <display_value name="dStaminaRegen" value=".10"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHERMITDuration" operation="add" value="90"/>
@@ -1431,6 +1462,7 @@
                 <requirement name="NotHasBuff" buff="debuffExahustion"/>
 
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                <display_value name="dWaterAmountAdd" value="15"/>
                 <display_value name="dStaminaRegen" value=".10"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHERMITDuration" operation="add" value="90"/>
@@ -1473,6 +1505,7 @@
                     <requirement name="NotHasBuff" buff="buffHERMIT"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHERMITDuration" operation="add" value="90"/>
@@ -1537,6 +1570,7 @@
                     <requirement name="NotHasBuff" buff="buffCOKKS"/>
 
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dWaterAmountAdd" value="15"/>
                     <display_value name="dStaminaRegen" value=".10"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                     <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCOKKSDuration" operation="add" value="240"/>
@@ -1581,7 +1615,8 @@
 
             <effect_group tiered="false" name="Food Tier 0">
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
-                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-10"/><display_value name="foodHealthAmount" value="-10"/>
+                <display_value name="dFoodAmount" value="20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-10"/><display_value name="dFoodHealthAmount" value="-10"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="-10"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="100"/><display_value name="dDysenteryRisk" value="1"/>
@@ -1618,7 +1653,8 @@
 
             <effect_group tiered="false" name="Food Tier 0">
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="5"/>
-                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-3"/><display_value name="foodHealthAmount" value="-3"/>
+                <display_value name="dFoodAmount" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-3"/><display_value name="dFoodHealthAmount" value="-3"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="-3"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="30"/><display_value name="dDysenteryRisk" value=".3"/>
@@ -1653,6 +1689,7 @@
 
             <effect_group tiered="false" name="Food Tier 0">
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="1"/>
+                <display_value name="dFoodAmount" value="7"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
             </effect_group>
         </item>
@@ -1681,8 +1718,11 @@
 
             <effect_group tiered="false" name="Food Tier 1">
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+                <display_value name="dFoodAmount" value="15"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
+                <display_value name="dFoodHealthAmount" value="7"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="-7"/>
+                <display_value name="dWaterAmountAdd" value="-7"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="5"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
                 <display_value name="$waterAmountAdd" value="-7"/>
@@ -1714,7 +1754,9 @@
 
             <effect_group tiered="false" name="Food Tier 1">
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
+                <display_value name="dFoodAmount" value="10"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+                <display_value name="dFoodHealthAmount" value="5"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
             </effect_group>
@@ -1745,7 +1787,11 @@
 
             <effect_group tiered="false" name="Food Tier 2">
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+                <display_value name="dFoodAmount" value="15"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+                <display_value name="dFoodHealthAmount" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="-5"/>
+                <display_value name="dWaterAmountAdd" value="-5"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
             </effect_group>
@@ -1777,7 +1823,11 @@
 
             <effect_group tiered="false" name="Food Tier 2">
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+                <display_value name="dFoodAmount" value="15"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+                <display_value name="dFoodHealthAmount" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="-5"/>
+                <display_value name="dWaterAmountAdd" value="-5"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
             </effect_group>
@@ -1809,7 +1859,11 @@
 
             <effect_group tiered="false" name="Food Tier 2">
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+                <display_value name="dFoodAmount" value="15"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+                <display_value name="dFoodHealthAmount" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="-5"/>
+                <display_value name="dWaterAmountAdd" value="-5"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
             </effect_group>
@@ -1840,7 +1894,11 @@
 
             <effect_group tiered="false" name="Food Tier 2">
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+                <display_value name="dFoodAmount" value="15"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+                <display_value name="dFoodHealthAmount" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="-5"/>
+                <display_value name="dFoodHealthAmountAdd" value="-5"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
                 <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
             </effect_group>
