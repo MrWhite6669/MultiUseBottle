@@ -31,3 +31,10 @@ Add's realistic food and drinks for 7 days to die! Started as a Multi-Use bottle
 - Removed non-functioning water cooler for now
 - Balanced some loot chances
 - Balanced special drink buffs
+
+### 0.2
+
+#### New:
+#### Changed:
+#### Fixed:
+- Disallowed drinking special drinks while exahusted
