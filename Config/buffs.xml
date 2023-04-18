@@ -1,0 +1,182 @@
+<configs>
+<append xpath="/buffs">
+
+    <!--COKK Buff-->
+    <buff name="buffCOKK" name_key="buffCOKKName" description_key="buffCOKKDesc" tooltip_key="buffCOKKTooltip" icon="ui_game_symbol_wind" icon_color="37,126,57">
+		<stack_type value="replace"/><duration value="0"/>
+		<display_value value=".buffCOKKDisplay"/><display_value_format value="time"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffCOKKDuration" operation="subtract" value="@$MetabolismDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffCOKKDisplay" operation="set" value="@$buffCOKKDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffCOKKDisplay" operation="divide" value="@$MetabolismDuration"/>
+		</effect_group>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffCOKK">
+				<requirement name="CVarCompare" cvar="$buffCOKKDuration" operation="LTE" value="0"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffCOKKDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffCOKKDuration" operation="set" value="0"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="debuffExahustion"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$debuffExahustionDuration" operation="set" value="900"/>
+		</effect_group>
+
+		<effect_group>
+			<passive_effect name="RunSpeed" operation="perc_add" value=".8"/>
+			<passive_effect name="WalkSpeed" operation="perc_add" value=".8"/>
+			<passive_effect name="WaterLossPerStaminaPointGained" operation="perc_add" value="1.8"/> <!-- regening stamina costs you water -->
+            <passive_effect name="AttacksPerMinute" operation="perc_add" value="2" />
+		</effect_group>
+	</buff>
+
+    <!--SUPER COKK Buff-->
+    <buff name="buffCOKKS" name_key="buffCOKKSName" description_key="buffCOKKSDesc" tooltip_key="buffCOKKSTooltip" icon="ui_game_symbol_wind" icon_color="37,126,57">
+		<stack_type value="replace"/><duration value="0"/>
+		<display_value value=".buffCOKKSDisplay"/><display_value_format value="time"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffCOKKSDuration" operation="subtract" value="@$MetabolismDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffCOKKSDisplay" operation="set" value="@$buffCOKKSDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffCOKKSDisplay" operation="divide" value="@$MetabolismDuration"/>
+		</effect_group>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffCOKKS">
+				<requirement name="CVarCompare" cvar="$buffCOKKSDuration" operation="LTE" value="0"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffCOKKSDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffCOKKSDuration" operation="set" value="0"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyStats" stat="Health" operation="set" value="0"/>
+		</effect_group>
+
+		<effect_group>
+			<passive_effect name="RunSpeed" operation="perc_add" value="1"/>
+			<passive_effect name="WalkSpeed" operation="perc_add" value="1"/>
+			<passive_effect name="WaterLossPerStaminaPointGained" operation="perc_add" value="10"/> <!-- regening stamina costs you water -->
+            <passive_effect name="AttacksPerMinute" operation="perc_add" value="2.5" />
+		</effect_group>
+	</buff>
+
+    
+    <!--Exahustion Debuff-->
+    <buff name="debuffExahustion" name_key="debuffExahustionName" description_key="debuffExahustionDesc" tooltip_key="debuffExahustionTooltip" icon="ui_game_symbol_fatigued" icon_color="255,0,0">
+		<stack_type value="replace"/><duration value="0"/>
+		<display_value value=".debuffExahustionDisplay"/><display_value_format value="time"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$debuffExahustionDuration" operation="subtract" value="@$MetabolismDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".debuffExahustionDisplay" operation="set" value="@$debuffExahustionDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".debuffExahustionDisplay" operation="divide" value="@$MetabolismDuration"/>
+		</effect_group>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="debuffExahustion">
+				<requirement name="CVarCompare" cvar="$debuffExahustionDuration" operation="LTE" value="0"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".debuffExahustionDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$debuffExahustionDuration" operation="set" value="0"/>
+		</effect_group>
+
+		<effect_group>
+			<passive_effect name="WalkSpeed" operation="perc_subtract" value=".15"/>
+			<passive_effect name="RunSpeed" operation="perc_subtract" value=".15"/>
+		</effect_group>
+	</buff>
+
+    <!--Buff JuggerNut-->
+    <buff name="buffJGNUT" name_key="buffJGNUTName" description_key="buffJGNUTDesc" tooltip_key="buffJGNUTTooltip" icon="ui_game_symbol_add" icon_color="37,126,57">
+		<stack_type value="replace"/><duration value="0"/>
+		<display_value value=".buffJGNUTDisplay"/><display_value_format value="time"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffJGNUTDuration" operation="subtract" value="@$MetabolismDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffJGNUTDisplay" operation="set" value="@$buffJGNUTDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffJGNUTDisplay" operation="divide" value="@$MetabolismDuration"/>
+		</effect_group>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffJGNUT">
+				<requirement name="CVarCompare" cvar="$buffJGNUTDuration" operation="LTE" value="0"/>
+			</triggered_effect>
+            
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="add" value="2"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffJGNUTDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffJGNUTDuration" operation="set" value="0"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="debuffExahustion"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$debuffExahustionDuration" operation="set" value="600"/>
+
+		</effect_group>
+
+		<effect_group>
+			<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9"/>
+            <passive_effect name="HealthMax" operation="perc_add" value="1" />
+		</effect_group>
+	</buff>
+
+    <!--Buff FourEyes-->
+    <buff name="buff4EYES" name_key="buff4EYESName" description_key="buff4EYESDesc" tooltip_key="buff4EYESTooltip" icon="ui_game_symbol_intellect" icon_color="37,126,57">
+		<stack_type value="replace"/><duration value="0"/>
+		<display_value value=".buff4EYESDisplay"/><display_value_format value="time"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buff4EYESDuration" operation="subtract" value="@$MetabolismDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buff4EYESDisplay" operation="set" value="@$buff4EYESDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buff4EYESDisplay" operation="divide" value="@$MetabolismDuration"/>
+		</effect_group>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buff4EYES">
+				<requirement name="CVarCompare" cvar="$buff4EYESDuration" operation="LTE" value="0"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buff4EYESDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buff4EYESDuration" operation="set" value="0"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="debuffExahustion"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$debuffExahustionDuration" operation="set" value="900"/>
+		</effect_group>
+
+		<effect_group>
+			<passive_effect name="CraftingTime" operation="perc_add" value="-0.8"/>
+		</effect_group>
+	</buff>
+
+    <!--Buff BuffaloKick-->
+    <buff name="buffBFKICK" name_key="buffBFKICKName" description_key="buffBFKICKDesc" tooltip_key="buffBFKICKTooltip" icon="ui_game_symbol_muscle" icon_color="37,126,57">
+		<stack_type value="replace"/><duration value="0"/>
+		<display_value value=".buffBFKICKDisplay"/><display_value_format value="time"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffBFKICKDuration" operation="subtract" value="@$MetabolismDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffBFKICKDisplay" operation="set" value="@$buffBFKICKDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffBFKICKDisplay" operation="divide" value="@$MetabolismDuration"/>
+		</effect_group>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBFKICK">
+				<requirement name="CVarCompare" cvar="$buffBFKICKDuration" operation="LTE" value="0"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffBFKICKDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffBFKICKDuration" operation="set" value="0"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="debuffExahustion"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$debuffExahustionDuration" operation="set" value="600"/>
+		</effect_group>
+
+		<effect_group>
+			<passive_effect name="EntityDamage" operation="perc_add" value="1"/>
+            <passive_effect name="BlockDamage" operation="perc_add" value="1"/>
+		</effect_group>
+	</buff>
+
+    <!--Buff HermitsJuice-->
+    <buff name="buffHERMIT" name_key="buffHERMITName" description_key="buffHERMITDesc" tooltip_key="buffHERMITTooltip" icon="ui_game_symbol_treasure" icon_color="37,126,57">
+		<stack_type value="replace"/><duration value="0"/>
+		<display_value value=".buffHERMITDisplay"/><display_value_format value="time"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffHERMITDuration" operation="subtract" value="@$MetabolismDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffHERMITDisplay" operation="set" value="@$buffHERMITDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffHERMITDisplay" operation="divide" value="@$MetabolismDuration"/>
+		</effect_group>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffHERMIT">
+				<requirement name="CVarCompare" cvar="$buffHERMITDuration" operation="LTE" value="0"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffHERMITDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffHERMITDuration" operation="set" value="0"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="debuffExahustion"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$debuffExahustionDuration" operation="set" value="2400"/>
+		</effect_group>
+
+		<effect_group>
+			<passive_effect name="LootGamestage" operation="perc_add" value="1"/>
+		</effect_group>
+	</buff>
+</append>
+</configs>

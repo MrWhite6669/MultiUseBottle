@@ -1,0 +1,53 @@
+<configs>
+
+<insertBefore xpath="traders/trader_item_groups/trader_item_group[@name='preparedDrink']">
+    <trader_item_group name="MSpecialDrinks" count="1">
+        <item name="MCOKK_Bottle2L" count="1,1" prob=".2"/>
+        <item name="MJGNUT_Bottle2L" count="1,1" prob=".3"/>
+        <item name="M4EYES_Bottle2L" count="1,1" prob=".1"/>
+        <item name="MBFKICK_Bottle2L" count="1,1" prob=".3"/>
+        <item name="MHERMIT_Bottle2L" count="1,1" prob=".1"/>
+    </trader_item_group>
+
+    <trader_item_group name="MSpecialDrinksCans" count="1">
+        <item name="MCOKK_Can" count="1,1" prob=".2"/>
+        <item name="MJGNUT_Can" count="1,1" prob=".3"/>
+        <item name="M4EYES_Can" count="1,1" prob=".1"/>
+        <item name="MBFKICK_Can" count="1,1" prob=".3"/>
+        <item name="MHERMIT_Can" count="1,1" prob=".1"/>
+    </trader_item_group>
+
+    <trader_item_group name="MSpecialDrinksX6" count="1">
+        <item name="MCOKK_Bottle2L6X" count="1,1" prob=".2"/>
+        <item name="MJGNUT_Bottle2L6X" count="1,1" prob=".3"/>
+        <item name="M4EYES_Bottle2L6X" count="1,1" prob=".1"/>
+        <item name="MBFKICK_Bottle2L6X" count="1,1" prob=".3"/>
+        <item name="MHERMIT_Bottle2L6X" count="1,1" prob=".1"/>
+    </trader_item_group>
+</insertBefore>
+
+<append xpath="traders/trader_item_groups/trader_item_group[@name='preparedDrink']">
+    <item group="MSpecialDrinks" count="1,2" prob=".2"/>
+    <item group="MSpecialDrinksCans" count="1,3" prob=".4"/>
+    <item name="MWater_Bottle2L6X" count="1" prob=".1"/>
+    <item name="MWater_Bottle2L" count="1,2" prob=".6"/>
+</append>
+
+<append xpath="traders/trader_item_groups/trader_item_group[@name='preparedFood']">
+    <item name="MChickenLegRoast" count="1,4"/>
+    <item name="MChickenRoast" count="1"/>
+    <item name="MFriesCooked" count="1,4"/>
+</append>
+
+<append xpath="traders/trader_item_groups/trader_item_group[@name='foodSupplies']">
+    <item name="MChickenRaw" count="1"/>
+    <item name="MChickenMeatRaw" count="1,8"/>
+    <item name="MCookingOil" count="1,5" prob="0.5"/>
+</append>
+
+<append xpath="traders/trader_item_groups/trader_item_group[@name='foodAll']">
+    <item name="MChickenRaw" count="1"/>
+    <item group="MSpecialDrinksX6" count="1" prob=".1"/>
+</append>
+
+</configs>

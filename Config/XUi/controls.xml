@@ -1,0 +1,11 @@
+<configs>
+    <append xpath="/controls">
+			<smxui_forge_materials>
+				<rect name="smxui_watercoolerinput_entry" depth="1" width="68" height="20" tooltip_key="${name}" >
+					<sprite name="materialIcon" depth="2" pos="12,-15" width="25" height="25" atlas="ItemIconAtlas" sprite="${name}" color="{itemicontint}" pivot="center" foregroundlayer="true" />
+					<label name="material" depth="2" pos="99999,99999" width="55" height="30" style="smxlib_label_normal" font_size="18" pivot="center" justify="left" overflow="ShrinkContent" />
+					<label name="weight" depth="2" pos="48,-17" width="44" height="30" style="smxlib_label_normal" font_size="18" pivot="center" justify="right" color="[tan]" overflow="ShrinkContent" />
+				</rect>
+			</smxui_forge_materials>
+		</append>
+</configs>

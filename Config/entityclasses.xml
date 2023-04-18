@@ -1,0 +1,8 @@
+<configs>
+    <remove xpath="entity_classes/entity_class[@name='animalChicken']/drop[@event='Harvest']"/>
+    <append xpath="entity_classes/entity_class[@name='animalChicken']">
+        <drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="23"/>
+        <drop event="Harvest" name="resourceFeather" tag="allToolsHarvest" count="5"/>
+        <drop event="Destroy" name="MChickenRaw" tag="butcherHarvest" count="1"/>
+    </append>
+</configs>

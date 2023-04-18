@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<xml>
+		<ModInfo>
+			<Name value="MrWhite's multiple use food"/>
+			<Description value="Adds food that can be eaten multiple times like in real life."/>
+			<Author value="MrWhite"/>
+			<Version value="A20" />
+
+			<Website value="0"/>
+		</ModInfo>
+	</xml>

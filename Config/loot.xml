@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+
+    <insertAfter xpath="/lootcontainers/lootgroup[@name='empty']">
+
+    <!--Drink Library-->
+        <lootgroup name="MFilthyWater" count="1">
+            <item name="MFilthy_Bottle2L" count="1,1" prob=".1"/>
+            <item name="MFilthy_Bottle2L34" count="1,1" prob=".2"/>
+            <item name="MFilthy_Bottle2L24" count="1,1" prob=".3"/>
+            <item name="MFilthy_Bottle2L14" count="1,1" prob=".4"/>
+        </lootgroup>
+
+        <lootgroup name="MPureWater" count="1">
+            <item name="MWater_Bottle2L" count="1,1" prob=".1"/>
+            <item name="MWater_Bottle2L34" count="1,1" prob=".2"/>
+            <item name="MWater_Bottle2L24" count="1,1" prob=".3"/>
+            <item name="MWater_Bottle2L14" count="1,1" prob=".4"/>
+        </lootgroup>
+
+        <lootgroup name="MCOKK" count="1">
+            <item name="MCOKK_Bottle2L" count="1,1" prob=".1"/>
+            <item name="MCOKK_Bottle2L34" count="1,1" prob=".2"/>
+            <item name="MCOKK_Bottle2L24" count="1,1" prob=".3"/>
+            <item name="MCOKK_Bottle2L14" count="1,1" prob=".4"/>
+        </lootgroup>
+
+        <lootgroup name="MJGNUT" count="1">
+            <item name="MJGNUT_Bottle2L" count="1,1" prob=".1"/>
+            <item name="MJGNUT_Bottle2L34" count="1,1" prob=".2"/>
+            <item name="MJGNUT_Bottle2L24" count="1,1" prob=".3"/>
+            <item name="MJGNUT_Bottle2L14" count="1,1" prob=".4"/>
+        </lootgroup>
+
+        <lootgroup name="M4EYES" count="1">
+            <item name="M4EYES_Bottle2L" count="1,1" prob=".1"/>
+            <item name="M4EYES_Bottle2L34" count="1,1" prob=".2"/>
+            <item name="M4EYES_Bottle2L24" count="1,1" prob=".3"/>
+            <item name="M4EYES_Bottle2L14" count="1,1" prob=".4"/>
+        </lootgroup>
+
+        <lootgroup name="MBFKICK" count="1">
+            <item name="MBFKICK_Bottle2L" count="1,1" prob=".1"/>
+            <item name="MBFKICK_Bottle2L34" count="1,1" prob=".2"/>
+            <item name="MBFKICK_Bottle2L24" count="1,1" prob=".3"/>
+            <item name="MBFKICK_Bottle2L14" count="1,1" prob=".4"/>
+        </lootgroup>
+
+        <lootgroup name="MHERMIT" count="1">
+            <item name="MHERMIT_Bottle2L" count="1,1" prob=".1"/>
+            <item name="MHERMIT_Bottle2L34" count="1,1" prob=".2"/>
+            <item name="MHERMIT_Bottle2L24" count="1,1" prob=".3"/>
+            <item name="MHERMIT_Bottle2L14" count="1,1" prob=".4"/>
+        </lootgroup>
+    <!--Drink Groups-->
+
+        <lootgroup name="MTrashDrinks" count="1">
+            <item group="MFilthyWater" count="1"/>
+        </lootgroup>
+
+        <lootgroup name="MCommonDrinks" count="1">
+            <item group="MPureWater" count="1"/>
+        </lootgroup>
+
+        <lootgroup name="MSpecialBottles" count="1">
+            <item group="MCOKK" count="1" prob=".2"/>
+            <item group="MJGNUT" count="1,1" prob=".3"/>
+            <item group="M4EYES" count="1,1" prob=".1"/>
+            <item group="MBFKICK" count="1,1" prob=".3"/>
+            <item group="MHERMIT" count="1,1" prob=".1"/>
+        </lootgroup>
+
+        <lootgroup name="MSpecialCans" count="1">
+            <item name="MCOKK_Can" count="1" prob=".2"/>
+            <item name="MJGNUT_Can" count="1,1" prob=".3"/>
+            <item name="M4EYES_Can" count="1,1" prob=".1"/>
+            <item name="MBFKICK_Can" count="1,1" prob=".3"/>
+            <item name="MHERMIT_Can" count="1,1" prob=".1"/>
+        </lootgroup>
+
+        <lootgroup name="MSpecialDrinks" count="1">
+            <item group="MSpecialBottles" count="1" prob=".3"/>
+            <item group="MSpecialCans" count="1,2" prob=".7"/>
+        </lootgroup>
+
+        <lootgroup name="MSpecialDrinksX6" count="1">
+            <item name="MCOKK_Bottle2L6X" count="1,1" prob=".2"/>
+            <item name="MJGNUT_Bottle2L6X" count="1,1" prob=".3"/>
+            <item name="M4EYES_Bottle2L6X" count="1,1" prob=".1"/>
+            <item name="MBFKICK_Bottle2L6X" count="1,1" prob=".3"/>
+            <item name="MHERMIT_Bottle2L6X" count="1,1" prob=".1"/>
+        </lootgroup>
+    </insertAfter>
+
+    <!--Loot Groups Append-->
+    <append xpath="/lootcontainers/lootgroup[@name='groupFoodTrash']">
+        <item name="MEmpty_Bottle2L" count="1,1" loot_prob_template="veryLow"/>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupDrinksCommon']">
+        <item group="MTrashDrinks" count="1" prob=".2"/>
+        <item group="MCommonDrinks" count="1" prob=".4"/>
+        <item group="MSpecialDrinks" count="1" prob=".2"/>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupToilet01']">
+        <item group="MTrashDrinks" count="1" prob=".3"/>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='drinks']">
+        <item group="MCommonDrinks" count="1" prob="0.3"/>
+        <item name="MWater_Bottle2L6X" count="1,1" prob="0.1"/>
+
+        <item group="MSpecialDrinks" count="1" prob=".2"/>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupBuriedStashChest']">
+        <item group="MCommonDrinks" count="1" prob="0.3"/>
+        <item name="MWater_Bottle2L6X" count="1,1" prob="0.1"/>
+    </append>
+
+     <append xpath="/lootcontainers/lootgroup[@name='groupChem01']">
+        <item group="MCommonDrinks" count="1" prob="0.3"/>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupSodaFountain01']">
+        <item group="MCommonDrinks" count="1" prob="0.4"/>
+        
+        <item group="MSpecialDrinks" count="1" prob=".4"/>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='rareFoodDrink']">
+        <item group="MSpecialDrinks" count="1" prob=".6"/>
+        <item group="MSpecialDrinksX6" count="1" prob=".01"/>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupDrinksRare']">
+        <item group="MSpecialDrinks" count="1" prob=".6"/>
+        <item group="MSpecialDrinksX6" count="1" prob=".01"/>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupIngredientsRare']">
+        <item name="MChickenRaw" count="1,2" loot_prob_template="veryLow"/>
+        <item name="MChickenRaw" count="1,4" loot_prob_template="low"/>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupIngredientsCommon']">
+        <item name="MCookingOil" count="1,2" loot_prob_template="medHigh"/>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupFoodCommon']">
+        <item name="MCookingOil" count="1,2" loot_prob_template="low"/>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupRefrigerator01']">
+        <item name="MChickenRaw" count="1,2" loot_prob_template="low"/>
+        <item name="MChickenRaw" count="1,4" loot_prob_template="med"/>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupRefrigerator02']">
+        <item name="MChickenRaw" count="1,2" loot_prob_template="low"/>
+        <item name="MChickenRaw" count="1,4" loot_prob_template="med"/>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupGrills']">
+        <item name="MChickenLegRoast" count="1,4" loot_prob_template="veryLow"/>
+        <item name="MFriesCooked" count="1,2" loot_prob_template="low"/>
+    </append>
+
+
+</configs>

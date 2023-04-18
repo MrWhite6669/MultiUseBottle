@@ -1,0 +1,1887 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	<append xpath="/items">
+
+    <!-- Resources -->
+        <item name="MEmpty_Bottle2L">
+			<property name="HoldType" value="3"/>
+			<property name="DescriptionKey" value="MEmpty_Bottle2LDesc"/>
+			<property name="CustomIcon" value="MEmpty_Bottle2L"/>
+			<property name="Meshfile" value="#Other/Items?Misc/parcelPrefab.prefab"/>
+			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourceScrapPolymers"/>
+			<property name="Weight" value="10"/>
+			<property name="Stacknumber" value="6"/>
+			<property name="EconomicValue" value="30"/>
+			<property name="SellableToTrader" value="false"/>
+            <property class="Action1"> <!-- UseAction -->
+                <property name="Class" value="ExchangeItem"/>
+                <property name="Delay" value="1.0"/>
+                <property name="Change_item_to" value="MFilthy_Bottle2L"/>
+                <property name="Do_block_action" value="deplete1"/>
+                <property name="Focused_blockname_1" value="water"/>
+                <property name="Focused_blockname_2" value="waterMoving"/>
+                <property name="Focused_blockname_3" value="waterStaticBucket"/>
+                <property name="Focused_blockname_4" value="waterMovingBucket"/>
+                <property name="Focused_blockname_5" value="terrWaterPOI"/>
+                <property name="Sound_start" value="bucketfill_water"/>
+            </property>
+	        <property name="Group" value="Resources"/>
+		</item>
+
+        <item name="MCookingOil">
+			<property name="HoldType" value="3"/>
+			<property name="DescriptionKey" value="MCookingOilDesc"/>
+			<property name="CustomIcon" value="MCookingOil"/>
+			<property name="Meshfile" value="#Other/Items?Misc/parcelPrefab.prefab"/>
+			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourceOil"/>
+			<property name="Weight" value="10"/>
+			<property name="Stacknumber" value="50"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="SellableToTrader" value="true"/>
+	        <property name="Group" value="Resources"/>
+		</item>
+
+    <!--Drinks-->
+        <!--Murky water bottle 2L-->
+            <item name="MFilthy_Bottle2L">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MFilthy_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MFilthy_Bottle2L"/>
+                <property name="DisplayType" value="waterDysentery"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="10"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MFilthy_Bottle2L34"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 0">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+                    <display_value name="dStaminaRegen" value=".15"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/><display_value name="dDysenteryRisk" value=".12"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchDrink">
+                        <requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
+                    </triggered_effect>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MFilthy_Bottle2L34">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MFilthy_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MFilthy_Bottle2L34"/>
+                <property name="DisplayType" value="waterDysentery"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="10"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MFilthy_Bottle2L24"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 0">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+                    <display_value name="dStaminaRegen" value=".15"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/><display_value name="dDysenteryRisk" value=".12"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchDrink">
+                        <requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
+                    </triggered_effect>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MFilthy_Bottle2L24">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MFilthy_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MFilthy_Bottle2L24"/>
+                <property name="DisplayType" value="waterDysentery"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="10"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MFilthy_Bottle2L14"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 0">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+                    <display_value name="dStaminaRegen" value=".15"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/><display_value name="dDysenteryRisk" value=".12"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchDrink">
+                        <requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
+                    </triggered_effect>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MFilthy_Bottle2L14">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MFilthy_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MFilthy_Bottle2L14"/>
+                <property name="DisplayType" value="waterDysentery"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="10"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MEmpty_Bottle2L"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 0">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+                    <display_value name="dStaminaRegen" value=".15"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/><display_value name="dDysenteryRisk" value=".12"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchDrink">
+                        <requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
+                    </triggered_effect>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+        <!-- Clean water bottle 2L-->
+            <item name="MWater_Bottle2L">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MWater_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MWater_Bottle2L"/>
+                <property name="DisplayType" value="water"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MWaterFull"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="10"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property name="MeltTimePerUnit" value="1"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MWater_Bottle2L34"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 0">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="30"/>
+                    <display_value name="dStaminaRegen" value=".15"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MWater_Bottle2L34">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MWater_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MWater_Bottle2L34"/>
+                <property name="DisplayType" value="water"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="10"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MWater_Bottle2L24"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 0">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="30"/>
+                    <display_value name="dStaminaRegen" value=".15"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MWater_Bottle2L24">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MWater_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MWater_Bottle2L24"/>
+                <property name="DisplayType" value="water"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="10"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MWater_Bottle2L14"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 0">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="30"/>
+                    <display_value name="dStaminaRegen" value=".15"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MWater_Bottle2L14">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MWater_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MWater_Bottle2L14"/>
+                <property name="DisplayType" value="water"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="10"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MEmpty_Bottle2L"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 0">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="30"/>
+                    <display_value name="dStaminaRegen" value=".15"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MWater_Bottle2L6X">
+                <property name="CustomIcon" value="MWater_Bottle2L6X"/><property name="ItemTypeIcon" value="bundle"/>
+                <property name="DescriptionKey" value="MWater_Bottle2L6XDesc"/>
+                <property name="HoldType" value="45"/>
+                <property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="5"/>
+                <property name="Weight" value="60"/>
+                <property name="EconomicValue" value="120"/>
+                <property name="SellableToTrader" value="false"/>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+                <property class="Action0">
+                    <property name="Class" value="OpenBundle"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Use_time" value="0"/>
+                    <property name="Sound_start" value="close_garbage"/>
+                    <property name="Create_item" value="MWater_Bottle2L"/>
+                    <property name="Create_item_count" value="6"/>
+                </property>
+            </item>
+
+        <!--Bottle of COKK 2L-->
+            <item name="MCOKK_Bottle2L">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MCOKK_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MCOKK_Bottle2L"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="250"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MCOKK_Bottle2L34"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 2">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCOKKDuration" operation="add" value="30"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCOKKDuration" operation="set" value="60">
+                    <requirement name="CVarCompare" cvar="$buffCOKKDuration" operation="GT" value="60"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCOKK"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MCOKK_Bottle2L34">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MCOKK_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MCOKK_Bottle2L34"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="250"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MCOKK_Bottle2L24"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 2">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCOKKDuration" operation="add" value="30"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCOKKDuration" operation="set" value="60">
+                    <requirement name="CVarCompare" cvar="$buffCOKKDuration" operation="GT" value="60"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCOKK"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MCOKK_Bottle2L24">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MCOKK_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MCOKK_Bottle2L24"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="250"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MCOKK_Bottle2L14"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 2">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCOKKDuration" operation="add" value="30"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCOKKDuration" operation="set" value="60">
+                    <requirement name="CVarCompare" cvar="$buffCOKKDuration" operation="GT" value="60"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCOKK"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MCOKK_Bottle2L14">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MCOKK_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MCOKK_Bottle2L14"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="250"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MEmpty_Bottle2L"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 2">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCOKKDuration" operation="add" value="30"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCOKKDuration" operation="set" value="60">
+                    <requirement name="CVarCompare" cvar="$buffCOKKDuration" operation="GT" value="60"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCOKK"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MCOKK_Can">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MCOKK_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MCOKK_Can"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="Mmetal"/>
+                <property name="Stacknumber" value="16"/>
+                <property name="Weight" value="2"/>
+                <property name="EconomicValue" value="65"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="drinkCanEmpty"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 2">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+                    <requirement name="NotHasBuff" buff="buffCOKK"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCOKKDuration" operation="add" value="30"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCOKKDuration" operation="set" value="30">
+                    <requirement name="CVarCompare" cvar="$buffCOKKDuration" operation="GT" value="30"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCOKK"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MCOKK_Bottle2L6X">
+                <property name="CustomIcon" value="MCOKK_Bottle2L6X"/><property name="ItemTypeIcon" value="bundle"/>
+                <property name="DescriptionKey" value="MCOKK_Bottle2L6XDesc"/>
+                <property name="HoldType" value="45"/>
+                <property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="5"/>
+                <property name="Weight" value="60"/>
+                <property name="EconomicValue" value="3000"/>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+                <property class="Action0">
+                    <property name="Class" value="OpenBundle"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Use_time" value="0"/>
+                    <property name="Sound_start" value="close_garbage"/>
+                    <property name="Create_item" value="MCOKK_Bottle2L"/>
+                    <property name="Create_item_count" value="6"/>
+                </property>
+            </item>
+
+        <!--Bottle of Juggernut 2L-->
+            <item name="MJGNUT_Bottle2L">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MJGNUT_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MJGNUT_Bottle2L"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="250"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MJGNUT_Bottle2L34"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 3">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+                    <requirement name="NotHasBuff" buff="buffJGNUT"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffJGNUTDuration" operation="add" value="120"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffJGNUTDuration" operation="set" value="480">
+                    <requirement name="CVarCompare" cvar="$buffJGNUTDuration" operation="GT" value="480"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffJGNUT"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MJGNUT_Bottle2L34">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MJGNUT_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MJGNUT_Bottle2L34"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="250"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MJGNUT_Bottle2L24"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 3">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffJGNUTDuration" operation="add" value="120"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffJGNUTDuration" operation="set" value="480">
+                    <requirement name="CVarCompare" cvar="$buffJGNUTDuration" operation="GT" value="480"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffJGNUT"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MJGNUT_Bottle2L24">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MJGNUT_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MJGNUT_Bottle2L24"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="250"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MJGNUT_Bottle2L14"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 3">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffJGNUTDuration" operation="add" value="120"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffJGNUTDuration" operation="set" value="480">
+                    <requirement name="CVarCompare" cvar="$buffJGNUTDuration" operation="GT" value="480"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffJGNUT"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MJGNUT_Bottle2L14">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MJGNUT_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MJGNUT_Bottle2L14"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="250"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MEmpty_Bottle2L"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 3">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffJGNUTDuration" operation="add" value="120"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffJGNUTDuration" operation="set" value="480">
+                    <requirement name="CVarCompare" cvar="$buffJGNUTDuration" operation="GT" value="480"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffJGNUT"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MJGNUT_Can">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MJGNUT_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MJGNUT_Can"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="Mmetal"/>
+                <property name="Stacknumber" value="16"/>
+                <property name="Weight" value="2"/>
+                <property name="EconomicValue" value="65"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="drinkCanEmpty"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 2">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffJGNUTDuration" operation="add" value="120"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffJGNUTDuration" operation="set" value="120">
+                    <requirement name="CVarCompare" cvar="$buffJGNUTDuration" operation="GT" value="120"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffJGNUT"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MJGNUT_Bottle2L6X">
+                <property name="CustomIcon" value="MJGNUT_Bottle2L6X"/><property name="ItemTypeIcon" value="bundle"/>
+                <property name="DescriptionKey" value="MJGNUT_Bottle2L6XDesc"/>
+                <property name="HoldType" value="45"/>
+                <property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="5"/>
+                <property name="Weight" value="60"/>
+                <property name="EconomicValue" value="3000"/>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+                <property class="Action0">
+                    <property name="Class" value="OpenBundle"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Use_time" value="0"/>
+                    <property name="Sound_start" value="close_garbage"/>
+                    <property name="Create_item" value="MJGNUT_Bottle2L"/>
+                    <property name="Create_item_count" value="6"/>
+                </property>
+            </item>
+
+        <!--Bottle of Foureyes 2L-->
+            <item name="M4EYES_Bottle2L">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="M4EYES_Bottle2LDesc"/>
+                <property name="CustomIcon" value="M4EYES_Bottle2L"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="500"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="M4EYES_Bottle2L34"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 3">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buff4EYESDuration" operation="add" value="30"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buff4EYESDuration" operation="set" value="30">
+                    <requirement name="CVarCompare" cvar="$buff4EYESDuration" operation="GT" value="30"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buff4EYES"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="M4EYES_Bottle2L34">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="M4EYES_Bottle2LDesc"/>
+                <property name="CustomIcon" value="M4EYES_Bottle2L34"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="500"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="M4EYES_Bottle2L24"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 3">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buff4EYESDuration" operation="add" value="30"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buff4EYESDuration" operation="set" value="30">
+                    <requirement name="CVarCompare" cvar="$buff4EYESDuration" operation="GT" value="30"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buff4EYES"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="M4EYES_Bottle2L24">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="M4EYES_Bottle2LDesc"/>
+                <property name="CustomIcon" value="M4EYES_Bottle2L24"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="500"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="M4EYES_Bottle2L14"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 3">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buff4EYESDuration" operation="add" value="30"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buff4EYESDuration" operation="set" value="30">
+                    <requirement name="CVarCompare" cvar="$buff4EYESDuration" operation="GT" value="30"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buff4EYES"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="M4EYES_Bottle2L14">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="M4EYES_Bottle2LDesc"/>
+                <property name="CustomIcon" value="M4EYES_Bottle2L14"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="500"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MEmpty_Bottle2L"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 3">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buff4EYESDuration" operation="add" value="30"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buff4EYESDuration" operation="set" value="30">
+                    <requirement name="CVarCompare" cvar="$buff4EYESDuration" operation="GT" value="30"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buff4EYES"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="M4EYES_Can">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="M4EYES_Bottle2LDesc"/>
+                <property name="CustomIcon" value="M4EYES_Can"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="Mmetal"/>
+                <property name="Stacknumber" value="16"/>
+                <property name="Weight" value="2"/>
+                <property name="EconomicValue" value="130"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="drinkCanEmpty"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 2">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+                    <requirement name="NotHasBuff" buff="buff4EYES"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buff4EYESDuration" operation="add" value="30"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buff4EYESDuration" operation="set" value="30">
+                    <requirement name="CVarCompare" cvar="$buff4EYESDuration" operation="GT" value="30"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buff4EYES"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="M4EYES_Bottle2L6X">
+                <property name="CustomIcon" value="M4EYES_Bottle2L6X"/><property name="ItemTypeIcon" value="bundle"/>
+                <property name="DescriptionKey" value="M4EYES_Bottle2L6XDesc"/>
+                <property name="HoldType" value="45"/>
+                <property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="5"/>
+                <property name="Weight" value="60"/>
+                <property name="EconomicValue" value="6000"/>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+                <property class="Action0">
+                    <property name="Class" value="OpenBundle"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Use_time" value="0"/>
+                    <property name="Sound_start" value="close_garbage"/>
+                    <property name="Create_item" value="M4EYES_Bottle2L"/>
+                    <property name="Create_item_count" value="6"/>
+                </property>
+            </item>
+
+        <!--Bottle of Buffalo Kick 2L-->
+            <item name="MBFKICK_Bottle2L">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MBFKICK_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MBFKICK_Bottle2L"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="250"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MBFKICK_Bottle2L34"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 3">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBFKICKDuration" operation="add" value="60"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBFKICKDuration" operation="set" value="240">
+                    <requirement name="CVarCompare" cvar="$buffBFKICKDuration" operation="GT" value="240"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffBFKICK"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MBFKICK_Bottle2L34">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MBFKICK_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MBFKICK_Bottle2L34"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="250"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MBFKICK_Bottle2L24"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 3">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBFKICKDuration" operation="add" value="60"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBFKICKDuration" operation="set" value="240">
+                    <requirement name="CVarCompare" cvar="$buffBFKICKDuration" operation="GT" value="240"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffBFKICK"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MBFKICK_Bottle2L24">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MBFKICK_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MBFKICK_Bottle2L24"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="250"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MBFKICK_Bottle2L14"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 3">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBFKICKDuration" operation="add" value="60"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBFKICKDuration" operation="set" value="240">
+                    <requirement name="CVarCompare" cvar="$buffBFKICKDuration" operation="GT" value="240"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffBFKICK"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MBFKICK_Bottle2L14">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MBFKICK_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MBFKICK_Bottle2L14"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="1"/>
+                <property name="Weight" value="10"/>
+                <property name="EconomicValue" value="250"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="MEmpty_Bottle2L"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 3">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBFKICKDuration" operation="add" value="60"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBFKICKDuration" operation="set" value="240">
+                    <requirement name="CVarCompare" cvar="$buffBFKICKDuration" operation="GT" value="240"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffBFKICK"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MBFKICK_Can">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MBFKICK_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MBFKICK_Can"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="Mmetal"/>
+                <property name="Stacknumber" value="16"/>
+                <property name="Weight" value="2"/>
+                <property name="EconomicValue" value="65"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="drinkCanEmpty"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 2">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+                    <requirement name="NotHasBuff" buff="buffBFKICK"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBFKICKDuration" operation="add" value="60"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBFKICKDuration" operation="set" value="60">
+                    <requirement name="CVarCompare" cvar="$buffBFKICKDuration" operation="GT" value="60"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffBFKICK"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+            <item name="MBFKICK_Bottle2L6X">
+                <property name="CustomIcon" value="MBFKICK_Bottle2L6X"/><property name="ItemTypeIcon" value="bundle"/>
+                <property name="DescriptionKey" value="MBFKICK_Bottle2L6XDesc"/>
+                <property name="HoldType" value="45"/>
+                <property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="MresourceScrapPolymers"/>
+                <property name="Stacknumber" value="5"/>
+                <property name="Weight" value="60"/>
+                <property name="EconomicValue" value="3000"/>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+                <property class="Action0">
+                    <property name="Class" value="OpenBundle"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Use_time" value="0"/>
+                    <property name="Sound_start" value="close_garbage"/>
+                    <property name="Create_item" value="MBFKICK_Bottle2L"/>
+                    <property name="Create_item_count" value="6"/>
+                </property>
+            </item>
+
+        <!--Bottle of Hermits Juice 2L-->
+        <item name="MHERMIT_Bottle2L">
+            <property name="HoldType" value="3"/>
+            <property name="DescriptionKey" value="MHERMIT_Bottle2LDesc"/>
+			<property name="CustomIcon" value="MHERMIT_Bottle2L"/>
+            <property name="DisplayType" value="waterCoffee"/>
+            <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+            <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="MresourceScrapPolymers"/>
+            <property name="Stacknumber" value="1"/>
+            <property name="Weight" value="10"/>
+            <property name="EconomicValue" value="1000"/>
+            <property name="EconomicBundleSize" value="1"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="0"/>
+                <property name="Sound_start" value="player_drinking"/>
+                <property name="Create_item" value="MHERMIT_Bottle2L34"/>
+            </property>
+            <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+            <effect_group tiered="false" name="Drink Tier 3">
+                <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                <display_value name="dStaminaRegen" value=".10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHERMITDuration" operation="add" value="90"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHERMITDuration" operation="set" value="180">
+                <requirement name="CVarCompare" cvar="$buffHERMITDuration" operation="GT" value="180"/></triggered_effect>
+		        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffHERMIT"/>
+            </effect_group>
+
+            <effect_group tiered="false">
+                <requirement name="HasBuff" buff="buffIsOnFire"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+            </effect_group>
+        </item>
+
+        <item name="MHERMIT_Bottle2L34">
+            <property name="HoldType" value="3"/>
+            <property name="DescriptionKey" value="MHERMIT_Bottle2LDesc"/>
+			<property name="CustomIcon" value="MHERMIT_Bottle2L34"/>
+            <property name="DisplayType" value="waterCoffee"/>
+            <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+            <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="MresourceScrapPolymers"/>
+            <property name="Stacknumber" value="1"/>
+            <property name="Weight" value="10"/>
+            <property name="EconomicValue" value="1000"/>
+            <property name="EconomicBundleSize" value="1"/>
+            <property name="SellableToTrader" value="false"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="0"/>
+                <property name="Sound_start" value="player_drinking"/>
+                <property name="Create_item" value="MHERMIT_Bottle2L24"/>
+            </property>
+            <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+            <effect_group tiered="false" name="Drink Tier 3">
+                <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                <display_value name="dStaminaRegen" value=".10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHERMITDuration" operation="add" value="90"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHERMITDuration" operation="set" value="180">
+                <requirement name="CVarCompare" cvar="$buffHERMITDuration" operation="GT" value="180"/></triggered_effect>
+		        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffHERMIT"/>
+            </effect_group>
+
+            <effect_group tiered="false">
+                <requirement name="HasBuff" buff="buffIsOnFire"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+            </effect_group>
+        </item>
+
+        <item name="MHERMIT_Bottle2L24">
+            <property name="HoldType" value="3"/>
+            <property name="DescriptionKey" value="MHERMIT_Bottle2LDesc"/>
+			<property name="CustomIcon" value="MHERMIT_Bottle2L24"/>
+            <property name="DisplayType" value="waterCoffee"/>
+            <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+            <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="MresourceScrapPolymers"/>
+            <property name="Stacknumber" value="1"/>
+            <property name="Weight" value="10"/>
+            <property name="EconomicValue" value="1000"/>
+            <property name="EconomicBundleSize" value="1"/>
+            <property name="SellableToTrader" value="false"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="0"/>
+                <property name="Sound_start" value="player_drinking"/>
+                <property name="Create_item" value="MHERMIT_Bottle2L14"/>
+            </property>
+            <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+            <effect_group tiered="false" name="Drink Tier 3">
+                <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                <display_value name="dStaminaRegen" value=".10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHERMITDuration" operation="add" value="90"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHERMITDuration" operation="set" value="180">
+                <requirement name="CVarCompare" cvar="$buffHERMITDuration" operation="GT" value="180"/></triggered_effect>
+		        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffHERMIT"/>
+            </effect_group>
+
+            <effect_group tiered="false">
+                <requirement name="HasBuff" buff="buffIsOnFire"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+            </effect_group>
+        </item>
+
+        <item name="MHERMIT_Bottle2L14">
+            <property name="HoldType" value="3"/>
+            <property name="DescriptionKey" value="MHERMIT_Bottle2LDesc"/>
+			<property name="CustomIcon" value="MHERMIT_Bottle2L14"/>
+            <property name="DisplayType" value="waterCoffee"/>
+            <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+            <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="MresourceScrapPolymers"/>
+            <property name="Stacknumber" value="1"/>
+            <property name="Weight" value="10"/>
+            <property name="EconomicValue" value="1000"/>
+            <property name="EconomicBundleSize" value="1"/>
+            <property name="SellableToTrader" value="false"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="0"/>
+                <property name="Sound_start" value="player_drinking"/>
+                <property name="Create_item" value="MEmpty_Bottle2L"/>
+            </property>
+            <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+            <effect_group tiered="false" name="Drink Tier 3">
+                <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                <requirement name="NotHasBuff" buff="debuffExahustion"/>
+
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                <display_value name="dStaminaRegen" value=".10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHERMITDuration" operation="add" value="90"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHERMITDuration" operation="set" value="180">
+                <requirement name="CVarCompare" cvar="$buffHERMITDuration" operation="GT" value="180"/></triggered_effect>
+		        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffHERMIT"/>
+            </effect_group>
+
+            <effect_group tiered="false">
+                <requirement name="HasBuff" buff="buffIsOnFire"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+            </effect_group>
+        </item>
+
+        <item name="MHERMIT_Can">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MHERMIT_Bottle2LDesc"/>
+                <property name="CustomIcon" value="MHERMIT_Can"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="Mmetal"/>
+                <property name="Stacknumber" value="16"/>
+                <property name="Weight" value="2"/>
+                <property name="EconomicValue" value="250"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="drinkCanEmpty"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 2">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+                    <requirement name="NotHasBuff" buff="buffHERMIT"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHERMITDuration" operation="add" value="90"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHERMITDuration" operation="set" value="90">
+                    <requirement name="CVarCompare" cvar="$buffHERMITDuration" operation="GT" value="90"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffHERMIT"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+        <item name="MHERMIT_Bottle2L6X">
+            <property name="CustomIcon" value="MHERMIT_Bottle2L6X"/><property name="ItemTypeIcon" value="bundle"/>
+            <property name="DescriptionKey" value="MHERMIT_Bottle2L6XDesc"/>
+            <property name="HoldType" value="45"/>
+            <property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+            <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="MresourceScrapPolymers"/>
+            <property name="Stacknumber" value="5"/>
+            <property name="Weight" value="60"/>
+            <property name="EconomicValue" value="12000"/>
+            <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+            <property class="Action0">
+                <property name="Class" value="OpenBundle"/>
+                <property name="Delay" value="0"/>
+                <property name="Use_time" value="0"/>
+                <property name="Sound_start" value="close_garbage"/>
+                <property name="Create_item" value="MHERMIT_Bottle2L"/>
+                <property name="Create_item_count" value="6"/>
+            </property>
+        </item>
+
+        <!--Can of SUPER COKK-->
+        <item name="MCOKKS_Can">
+                <property name="HoldType" value="3"/>
+                <property name="DescriptionKey" value="MCOKKS_CanDesc"/>
+                <property name="CustomIcon" value="MCOKKS_Can"/>
+                <property name="DisplayType" value="waterCoffee"/>
+                <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+                <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+                <property name="Material" value="Mmetal"/>
+                <property name="Stacknumber" value="16"/>
+                <property name="Weight" value="2"/>
+                <property name="EconomicValue" value="5000"/>
+                <property name="EconomicBundleSize" value="1"/>
+                <property name="SellableToTrader" value="false"/>
+                <property class="Action0">
+                    <property name="Class" value="Eat"/>
+                    <property name="Delay" value="0"/>
+                    <property name="Sound_start" value="player_drinking"/>
+                    <property name="Create_item" value="drinkCanEmpty"/>
+                </property>
+                <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+                <effect_group tiered="false" name="Drink Tier 2">
+                    <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+                    <requirement name="NotHasBuff" buff="debuffExahustion"/>
+                    <requirement name="NotHasBuff" buff="buffCOKKS"/>
+
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
+                    <display_value name="dStaminaRegen" value=".10"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCOKKSDuration" operation="add" value="240"/>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCOKKSDuration" operation="set" value="240">
+                    <requirement name="CVarCompare" cvar="$buffCOKKSDuration" operation="GT" value="240"/></triggered_effect>
+                    <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCOKKS"/>
+                </effect_group>
+
+                <effect_group tiered="false">
+                    <requirement name="HasBuff" buff="buffIsOnFire"/>
+                        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+                </effect_group>
+            </item>
+
+
+
+    <!--Food Raw-->
+        <item name="MChickenRaw">
+            <property name="Tags" value="food"/>
+            <property name="CustomIcon" value="MChickenRaw"/>
+            <property name="DescriptionKey" value="MChickenRawDesc"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodRaw"/>
+            <property name="Meshfile" value="#Other/Items?Misc/parcelPrefab.prefab"/>
+            <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="MfoodRawMeat"/>
+            <property name="Stacknumber" value="4"/> <!-- STK food -->
+            <property name="EconomicBundleSize" value="5"/>
+            <property name="EconomicValue" value="200"/>
+            <property name="CraftingIngredientTime" value="30"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="1.0"/>
+                <property name="Use_time" value="..."/>
+                <property name="Sound_start" value="player_eating"/>
+                
+                <property name="Create_item" value="resourceBone"/>
+                <property name="Create_item_count" value="4"/>
+            </property>
+            <property name="Smell" value="ExLargeSmell"/>
+            <property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+            <effect_group tiered="false" name="Food Tier 0">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-10"/><display_value name="foodHealthAmount" value="-10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="-10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="100"/><display_value name="dDysenteryRisk" value="1"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+                    <requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
+                </triggered_effect>
+            </effect_group>
+        </item>
+
+        <item name="MChickenMeatRaw">
+            <property name="Tags" value="food"/>
+            <property name="CustomIcon" value="MChickenMeatRaw"/>
+            <property name="DescriptionKey" value="MChickenMeatRawDesc"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodRaw"/>
+            <property name="Meshfile" value="#Other/Items?Misc/parcelPrefab.prefab"/>
+            <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="MfoodRawMeat"/>
+            <property name="Stacknumber" value="12"/> <!-- STK food -->
+            <property name="EconomicBundleSize" value="5"/>
+            <property name="EconomicValue" value="50"/>
+            <property name="CraftingIngredientTime" value="8"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="1.0"/>
+                <property name="Use_time" value="..."/>
+                <property name="Sound_start" value="player_eating"/>
+                <property name="Create_item" value="resourceBone"/>
+                <property name="Create_item_count" value="1"/>
+            </property>
+            <property name="Smell" value="ExLargeSmell"/>
+            <property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+            <effect_group tiered="false" name="Food Tier 0">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-3"/><display_value name="foodHealthAmount" value="-3"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="-3"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="30"/><display_value name="dDysenteryRisk" value=".3"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+                    <requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
+                </triggered_effect>
+            </effect_group>
+        </item>
+
+        <item name="MFriesUncooked">
+            <property name="Tags" value="food"/>
+            <property name="CustomIcon" value="MFriesUncooked"/>
+            <property name="DescriptionKey" value="MFriesUncookedDesc"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodRaw"/>
+            <property name="Meshfile" value="#Other/Items?Misc/parcelPrefab.prefab"/>
+            <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="MresourceCrop"/>
+            <property name="Stacknumber" value="250"/> <!-- STK resource -->
+            <property name="EconomicValue" value="5"/>
+            <property name="EconomicBundleSize" value="10"/>
+            <property name="CraftingIngredientTime" value="5"/>
+            <!-- 14 is large round hold -->
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="1.0"/>
+                <property name="Use_time" value="..."/>
+                <property name="Sound_start" value="player_eating"/>
+            </property>
+            <property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+            <effect_group tiered="false" name="Food Tier 0">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="1"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+            </effect_group>
+        </item>
+
+    <!--Food Cooked-->
+        <item name="MFriesCooked">
+            <property name="Tags" value="food"/>
+            <property name="CustomIcon" value="MFriesCooked"/>
+            <property name="DescriptionKey" value="MFriesCookedDesc"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="foodWaterNegative"/>
+            <property name="Meshfile" value="#Other/Items?Misc/parcelPrefab.prefab"/>
+            <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="25"/> <!-- STK food -->
+            <property name="EconomicValue" value="20"/>
+            <property name="EconomicBundleSize" value="5"/>
+            <property name="UnlockedBy" value="perkMasterChef"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="1.0"/>
+                <property name="Use_time" value="..."/>
+                <property name="Sound_start" value="player_eating"/>
+            </property>
+            <property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+            <effect_group tiered="false" name="Food Tier 1">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="-7"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+                <display_value name="$waterAmountAdd" value="-7"/>
+            </effect_group>
+        </item>
+
+
+        <item name="MChickenLegRoast">
+            <property name="Tags" value="food"/>
+            <property name="CustomIcon" value="MChickenLegRoast"/>
+            <property name="DescriptionKey" value="MChickenLegRoastDesc"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="food"/>
+            <property name="Meshfile" value="#Other/Items?Misc/parcelPrefab.prefab"/>
+            <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="12"/> <!-- STK food -->
+            <property name="EconomicValue" value="100"/>
+            <property name="UnlockedBy" value="perkMasterChef"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="2.1"/>
+                <property name="Use_time" value="..."/>
+                <property name="Sound_start" value="player_eating"/>
+                <property name="Create_item" value="resourceBone"/>
+                <property name="Create_item_count" value="1"/>
+            </property>
+            <property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+            <effect_group tiered="false" name="Food Tier 1">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+            </effect_group>
+        </item>
+        <!--Roast Chicken-->
+        <item name="MChickenRoast">
+            <property name="Tags" value="food"/>
+            <property name="CustomIcon" value="MChickenRoast"/>
+            <property name="DescriptionKey" value="MChickenRoastDesc"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="food"/>
+            <property name="Meshfile" value="#Other/Items?Misc/parcelPrefab.prefab"/>
+            <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="4"/> <!-- STK food -->
+            <property name="EconomicValue" value="400"/>
+            <property name="UnlockedBy" value="perkMasterChef"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="4"/>
+                <property name="Use_time" value="..."/>
+                <property name="Sound_start" value="player_eating"/>
+                <property name="Create_item" value="resourceBone"/>
+                <property name="Create_item_count" value="1"/>
+                <property name="Create_item" value="MChickenRoast34"/>
+            </property>
+            <property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+            <effect_group tiered="false" name="Food Tier 2">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+            </effect_group>
+        </item>
+
+        <item name="MChickenRoast34">
+            <property name="Tags" value="food"/>
+            <property name="CustomIcon" value="MChickenRoast34"/>
+            <property name="DescriptionKey" value="MChickenRoastDesc"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="food"/>
+            <property name="Meshfile" value="#Other/Items?Misc/parcelPrefab.prefab"/>
+            <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="4"/> <!-- STK food -->
+            <property name="EconomicValue" value="400"/>
+            <property name="SellableToTrader" value="false"/>
+            <property name="UnlockedBy" value="perkMasterChef"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="4"/>
+                <property name="Use_time" value="..."/>
+                <property name="Sound_start" value="player_eating"/>
+                <property name="Create_item" value="resourceBone"/>
+                <property name="Create_item_count" value="1"/>
+                <property name="Create_item" value="MChickenRoast24"/>
+            </property>
+            <property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+            <effect_group tiered="false" name="Food Tier 2">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+            </effect_group>
+        </item>
+
+        <item name="MChickenRoast24">
+            <property name="Tags" value="food"/>
+            <property name="CustomIcon" value="MChickenRoast24"/>
+            <property name="DescriptionKey" value="MChickenRoastDesc"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="food"/>
+            <property name="Meshfile" value="#Other/Items?Misc/parcelPrefab.prefab"/>
+            <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="4"/> <!-- STK food -->
+            <property name="EconomicValue" value="400"/>
+            <property name="SellableToTrader" value="false"/>
+            <property name="UnlockedBy" value="perkMasterChef"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="4"/>
+                <property name="Use_time" value="..."/>
+                <property name="Sound_start" value="player_eating"/>
+                <property name="Create_item" value="resourceBone"/>
+                <property name="Create_item_count" value="1"/>
+                <property name="Create_item" value="MChickenRoast14"/>
+            </property>
+            <property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+            <effect_group tiered="false" name="Food Tier 2">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+            </effect_group>
+        </item>
+
+        <item name="MChickenRoast14">
+            <property name="Tags" value="food"/>
+            <property name="CustomIcon" value="MChickenRoast14"/>
+            <property name="DescriptionKey" value="MChickenRoastDesc"/>
+            <property name="HoldType" value="31"/>
+            <property name="DisplayType" value="food"/>
+            <property name="Meshfile" value="#Other/Items?Misc/parcelPrefab.prefab"/>
+            <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Morganic"/>
+            <property name="Stacknumber" value="4"/> <!-- STK food -->
+            <property name="EconomicValue" value="400"/>
+            <property name="SellableToTrader" value="false"/>
+            <property name="UnlockedBy" value="perkMasterChef"/>
+            <property class="Action0">
+                <property name="Class" value="Eat"/>
+                <property name="Delay" value="4"/>
+                <property name="Use_time" value="..."/>
+                <property name="Sound_start" value="player_eating"/>
+                <property name="Create_item" value="resourceBone"/>
+                <property name="Create_item_count" value="1"/>
+            </property>
+            <property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+            <effect_group tiered="false" name="Food Tier 2">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+            </effect_group>
+        </item>
+
+
+    <!--Schematics-->
+        <item name="MwaterCoolerFunctionalSchematic">
+            <property name="Extends" value="schematicMaster"/>
+            <property name="CreativeMode" value="Player"/>
+            <property name="CustomIcon" value="cntWaterCoolerFull"/>
+            <property name="Unlocks" value="MwaterCoolerFunctionalForge"/>
+            <effect_group tiered="false">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="MwaterCoolerFunctionalForge" operation="set" value="1"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+            </effect_group>
+        </item>
+    
+    
+    
+
+    <!--Materials-->
+    <item name="unit_water">
+        <property name="HoldType" value="45"/>
+        <property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+        <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+        <property name="CustomIcon" value="ui_game_symbol_thirst" color="0,255,255"/>
+        <property name="Material" value="Mwater"/>
+        <property name="Stacknumber" value="30000"/>
+        <property name="Weight" value="1"/>
+        <property name="Group" value="Resources"/>
+        <property name="ResourceUnit" value="true"/>
+        <property name="MeltTimePerUnit" value=".01"/> <!-- forge smelting time -->
+        <property name="UserHidden" value="true"/>
+        <property name="CraftingIngredientTime" value=".1"/>
+        <property name="CreativeMode" value="None"/>
+    </item>
+
+    <item name="unit_scrapPolymer">
+        <property name="HoldType" value="45"/>
+        <property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+        <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+        <property name="CustomIcon" value="resourceScrapPolymers"/>
+        <property name="Material" value="MresourceScrapPolymers"/>
+        <property name="Stacknumber" value="30000"/>
+        <property name="Weight" value="1"/>
+        <property name="Group" value="Resources"/>
+        <property name="ResourceUnit" value="true"/>
+        <property name="MeltTimePerUnit" value=".1"/> <!-- forge smelting time -->
+        <property name="UserHidden" value="true"/>
+        <property name="CraftingIngredientTime" value=".2"/>
+        <property name="CreativeMode" value="None"/>
+    </item>
+
+    <item name="resourceWater"> <!-- scrap material -->
+        <property name="HoldType" value="45"/>
+        <property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+        <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+        <property name="CustomIcon" value="ui_game_symbol_thirst" color="0,255,255"/>
+        <property name="Material" value="MresourceWater"/>
+        <property name="Weight" value="1"/>
+        <property name="Stacknumber" value="1000"/> <!-- STK resource -->
+        <property name="EconomicValue" value="16"/>
+        <property name="Group" value="Resources"/>
+        <property name="UserHidden" value="true"/>
+        <property name="CraftingIngredientTime" value=".01"/>
+    </item>
+
+    </append>
+</configs>
