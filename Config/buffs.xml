@@ -17,17 +17,18 @@
 			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffCOKKDisplay" operation="set" value="0"/>
 			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffCOKKDuration" operation="set" value="0"/>
             <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="debuffExahustion"/>
-            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$debuffExahustionDuration" operation="set" value="900"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$debuffExahustionDuration" operation="set" value="300"/>
 		</effect_group>
 
 		<effect_group>
-			<passive_effect name="RunSpeed" operation="perc_add" value=".8"/>
-			<passive_effect name="WalkSpeed" operation="perc_add" value=".8"/>
+			<passive_effect name="RunSpeed" operation="perc_add" value=".4"/>
+			<passive_effect name="WalkSpeed" operation="perc_add" value=".4"/>
 			<passive_effect name="WaterLossPerStaminaPointGained" operation="perc_add" value="1.8"/> <!-- regening stamina costs you water -->
-            <passive_effect name="AttacksPerMinute" operation="perc_add" value="2" />
+            <passive_effect name="AttacksPerMinute" operation="perc_add" value=".8" />
 		</effect_group>
 	</buff>
 
+	<!--TODO: Change how this works-->
     <!--SUPER COKK Buff-->
     <buff name="buffCOKKS" name_key="buffCOKKSName" description_key="buffCOKKSDesc" tooltip_key="buffCOKKSTooltip" icon="ui_game_symbol_wind" icon_color="37,126,57">
 		<stack_type value="replace"/><duration value="0"/>

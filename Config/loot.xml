@@ -98,20 +98,20 @@
     </append>
 
     <append xpath="/lootcontainers/lootgroup[@name='groupDrinksCommon']">
-        <item group="MTrashDrinks" count="1" prob=".2"/>
-        <item group="MCommonDrinks" count="1" prob=".4"/>
-        <item group="MSpecialDrinks" count="1" prob=".2"/>
+        <item group="MTrashDrinks" count="1" prob=".15"/>
+        <item group="MCommonDrinks" count="1" prob=".3"/>
+        <item group="MSpecialDrinks" count="1" prob=".15"/>
     </append>
 
     <append xpath="/lootcontainers/lootgroup[@name='groupToilet01']">
-        <item group="MTrashDrinks" count="1" prob=".3"/>
+        <item group="MTrashDrinks" count="1" prob=".2"/>
     </append>
 
     <append xpath="/lootcontainers/lootgroup[@name='drinks']">
-        <item group="MCommonDrinks" count="1" prob="0.3"/>
-        <item name="MWater_Bottle2L6X" count="1,1" prob="0.1"/>
+        <item group="MCommonDrinks" count="1" prob="0.2"/>
+        <item name="MWater_Bottle2L6X" count="1,1" prob="0.08"/>
 
-        <item group="MSpecialDrinks" count="1" prob=".2"/>
+        <item group="MSpecialDrinks" count="1" prob=".1"/>
     </append>
 
     <append xpath="/lootcontainers/lootgroup[@name='groupBuriedStashChest']">
@@ -120,11 +120,11 @@
     </append>
 
      <append xpath="/lootcontainers/lootgroup[@name='groupChem01']">
-        <item group="MCommonDrinks" count="1" prob="0.3"/>
+        <item group="MCommonDrinks" count="1" prob="0.2"/>
     </append>
 
     <append xpath="/lootcontainers/lootgroup[@name='groupSodaFountain01']">
-        <item group="MCommonDrinks" count="1" prob="0.4"/>
+        <item group="MCommonDrinks" count="1" prob=".4"/>
         
         <item group="MSpecialDrinks" count="1" prob=".4"/>
     </append>

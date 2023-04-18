@@ -1,4 +1,5 @@
 <configs>
+    <!-- Harvest whole chicken -->
     <remove xpath="entity_classes/entity_class[@name='animalChicken']/drop[@event='Harvest']"/>
     <append xpath="entity_classes/entity_class[@name='animalChicken']">
         <drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="23"/>
