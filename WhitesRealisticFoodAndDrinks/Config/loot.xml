@@ -132,7 +132,7 @@
         </lootgroup>
 
         <!-- Food groups -->
-        <lootgroup name="MRawMeat">
+        <lootgroup name="MRawMeat" count="1">
             <item name="MChickenMeatRaw" count="1,8" level="1,300" prob=".8"/>
             <item name="MChickenRaw" count="1,2" level="1,300" prob=".2"/>
         </lootgroup>
@@ -141,19 +141,19 @@
             <item name="MFriesUncooked" count="1,8" level="1,300"/>
         </lootgroup>
 
-        <lootgroup name="MRawFood">
+        <lootgroup name="MRawFood" count="1">
             <item group="MRawMeat" count="1"/>
             <item group="MRawVeggies" count="1"/>
         </lootgroup>
 
-        <lootgroup name="MChickenRoastG">
+        <lootgroup name="MChickenRoastG" count="1">
             <item name="MChickenRoast" prob="0.1"/>
             <item name="MChickenRoast34" prob="0.2"/>
             <item name="MChickenRoast24" prob="0.3"/>
             <item name="MChickenRoast14" prob="0.4"/>
         </lootgroup>
 
-        <lootgroup name="MCookedMeat">
+        <lootgroup name="MCookedMeat" count="1">
             <item group="MChickenRoastG" count="1" prob=".2"/>
             <item name="MChickenLegRoast" count="1,5" level="1,300" prob=".8"/>
         </lootgroup>
@@ -162,7 +162,7 @@
             <item name="MFriesCooked" count="1,5" level="1,300"/>
         </lootgroup>
 
-        <lootgroup name="MCookedFood">
+        <lootgroup name="MCookedFood" count="1">
             <item group="MCookedMeat" prob=".4"/>
             <item group="MCookedVeggies" prob=".6"/>
         </lootgroup>
