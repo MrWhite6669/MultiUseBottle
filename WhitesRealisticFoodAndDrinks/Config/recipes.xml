@@ -21,17 +21,17 @@
             <ingredient name="MFilthy_Bottle2L14" count="1"/>
             </recipe>
 
-        <recipe name="MChickenRoast" count="1" craft_time="600" craft_area="campfire"  craft_tool="toolCookingGrill" tags="perkMasterChef">
+        <recipe name="MChickenRoast" count="1" craft_time="600" craft_area="campfire"  craft_tool="toolCookingGrill">
             <ingredient name="MChickenRaw" count="1"/>
             <ingredient name="MCookingOil" count="1"/>
             </recipe>
 
-        <recipe name="MFriesCooked" count="1" craft_time="80" craft_area="campfire"  craft_tool="toolCookingPot" tags="perkMasterChef">
+        <recipe name="MFriesCooked" count="1" craft_time="80" craft_area="campfire"  craft_tool="toolCookingPot">
             <ingredient name="MFriesUncooked" count="1"/>
             <ingredient name="MCookingOil" count="1"/>
             </recipe>
 
-        <recipe name="MChickenLegRoast" count="1" craft_time="120" craft_area="campfire"  craft_tool="toolCookingGrill" tags="perkMasterChef">
+        <recipe name="MChickenLegRoast" count="1" craft_time="120" craft_area="campfire"  craft_tool="toolCookingGrill">
             <ingredient name="MChickenMeatRaw" count="1"/>
             </recipe>
 
