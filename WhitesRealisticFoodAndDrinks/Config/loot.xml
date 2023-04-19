@@ -324,7 +324,7 @@
 
     <append xpath="/lootcontainers/lootcontainer[@name='shamwayCrate' and not(item[@group='MCommonDrinks'])]">
         <item group="MCommonDrinks" count="1,4" level="1,300" loot_prob_template="MRareProb"/>
-        <item group="MWater_Bottle2LX6" count="1" prob="0.05"/>
+        <item name="MWater_Bottle2L6X" count="1" prob="0.05"/>
     </append>
 
     <append xpath="/lootcontainers/lootcontainer[@name='shamwayCrate' and not(item[@group='MCookedFood'])]">
