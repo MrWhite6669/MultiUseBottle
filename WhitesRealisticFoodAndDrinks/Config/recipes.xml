@@ -5,33 +5,33 @@
 
 
 	<append xpath="/recipes">
-        <recipe name="MWater_Bottle2L" count="1" craft_time="45" craft_area="campfire"  craft_tool="toolCookingPot">
+        <recipe name="MWater_Bottle2L" count="1" craft_time="45" craft_area="campfire"  craft_tool="toolCookingPot" always_unlocked="true">
             <ingredient name="MFilthy_Bottle2L" count="1"/>
             </recipe>
 
-        <recipe name="MWater_Bottle2L34" count="1" craft_time="30" craft_area="campfire"  craft_tool="toolCookingPot">
+        <recipe name="MWater_Bottle2L34" count="1" craft_time="30" craft_area="campfire"  craft_tool="toolCookingPot" always_unlocked="true">
             <ingredient name="MFilthy_Bottle2L34" count="1"/>
             </recipe>
 
-        <recipe name="MWater_Bottle2L24" count="1" craft_time="20" craft_area="campfire"  craft_tool="toolCookingPot">
+        <recipe name="MWater_Bottle2L24" count="1" craft_time="20" craft_area="campfire"  craft_tool="toolCookingPot" always_unlocked="true">
             <ingredient name="MFilthy_Bottle2L24" count="1"/>
             </recipe>
 
-        <recipe name="MWater_Bottle2L14" count="1" craft_time="10" craft_area="campfire"  craft_tool="toolCookingPot">
+        <recipe name="MWater_Bottle2L14" count="1" craft_time="10" craft_area="campfire"  craft_tool="toolCookingPot" always_unlocked="true">
             <ingredient name="MFilthy_Bottle2L14" count="1"/>
             </recipe>
 
-        <recipe name="MChickenRoast" count="1" craft_time="600" craft_area="campfire"  craft_tool="toolCookingGrill">
+        <recipe name="MChickenRoast" count="1" craft_time="600" craft_area="campfire"  craft_tool="toolCookingGrill" always_unlocked="true">
             <ingredient name="MChickenRaw" count="1"/>
             <ingredient name="MCookingOil" count="1"/>
             </recipe>
 
-        <recipe name="MFriesCooked" count="1" craft_time="80" craft_area="campfire"  craft_tool="toolCookingPot">
+        <recipe name="MFriesCooked" count="1" craft_time="80" craft_area="campfire"  craft_tool="toolCookingPot" always_unlocked="true">
             <ingredient name="MFriesUncooked" count="1"/>
             <ingredient name="MCookingOil" count="1"/>
             </recipe>
 
-        <recipe name="MChickenLegRoast" count="1" craft_time="120" craft_area="campfire"  craft_tool="toolCookingGrill">
+        <recipe name="MChickenLegRoast" count="1" craft_time="120" craft_area="campfire"  craft_tool="toolCookingGrill" always_unlocked="true">
             <ingredient name="MChickenMeatRaw" count="1"/>
             </recipe>
 

@@ -1932,7 +1932,6 @@
             <property name="Stacknumber" value="25"/>
             <property name="EconomicValue" value="20"/>
             <property name="EconomicBundleSize" value="5"/>
-            <property name="UnlockedBy" value="perkMasterChef"/>
             <property class="Action0">
                 <property name="Class" value="Eat"/>
                 <property name="Delay" value="1.0"/>
@@ -1966,7 +1965,6 @@
             <property name="Material" value="Morganic"/>
             <property name="Stacknumber" value="12"/>
             <property name="EconomicValue" value="100"/>
-            <property name="UnlockedBy" value="perkMasterChef"/>
             <property class="Action0">
                 <property name="Class" value="Eat"/>
                 <property name="Delay" value="2.1"/>
@@ -1998,7 +1996,6 @@
             <property name="Material" value="Morganic"/>
             <property name="Stacknumber" value="4"/>
             <property name="EconomicValue" value="400"/>
-            <property name="UnlockedBy" value="perkMasterChef"/>
             <property class="Action0">
                 <property name="Class" value="Eat"/>
                 <property name="Delay" value="4"/>
