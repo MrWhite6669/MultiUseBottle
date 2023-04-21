@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+    <insertAfter xpath="/ui_display_info/item_display/item_display_info[@display_type='waterDysentery']">
+        <item_display_info display_type="MFilthy_Bottle2L" display_group="groupConsumables">
+            <display_entry name="$waterAmountAdd" title_key="statWaterAmount"/>
+			<display_entry name="dDysenteryRisk" title_key="statDysenteryRisk" display_type="Percent" negative_preferred="true"/>            
+        </item_display_info>
+    </insertAfter>
+</configs>
