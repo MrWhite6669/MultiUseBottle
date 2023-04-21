@@ -2135,6 +2135,84 @@
     
 
     <!--Materials-->
+    
+    <!--Dev-->
+    <item name="MEmpty_Bottle2LTest">
+      <property name="HoldType" value="3"/>
+      <!-- <property name="DescriptionKey" value="MEmpty_Bottle2LDesc"/> -->
+      <property name="CustomIcon" value="MEmpty_Bottle2L"/>
+      <property name="Meshfile" value="#Other/Items?Misc/parcelPrefab.prefab"/>
+      <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+      <property name="Material" value="MresourceScrapPolymers"/>
+      <property name="Weight" value="10"/>
+      <property name="Stacknumber" value="6"/>
+      <property name="EconomicValue" value="30"/>
+      <property name="SellableToTrader" value="false"/>
+      <property class="Action1">
+        <!-- UseAction -->
+        <property name="Class" value="ExchangeItem"/>
+        <property name="Delay" value="1.0"/>
+        <property name="Change_item_to" value="MFilthy_Bottle2LTest"/>
+        <property name="Do_block_action" value="deplete1"/>
+        <property name="Focused_blockname_1" value="water"/>
+        <property name="Focused_blockname_2" value="waterMoving"/>
+        <property name="Focused_blockname_3" value="waterStaticBucket"/>
+        <property name="Focused_blockname_4" value="waterMovingBucket"/>
+        <property name="Focused_blockname_5" value="terrWaterPOI"/>
+        <property name="Sound_start" value="bucketfill_water"/>
+      </property>
+      <property name="Group" value="Resources"/>
+    </item>
+
+    <item name="MFilthy_Bottle2LTest">
+      <property name="HoldType" value="3"/>
+      <!-- <property name="DescriptionKey" value="MFilthy_Bottle2LDesc"/> -->
+      <property name="CustomIcon" value="MFilthy_Bottle2L"/>
+      <property name="DisplayType" value="MFilthy_Bottle2L"/>
+      <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+      <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+      <property name="Material" value="MresourceScrapPolymers"/>
+      <property name="DegradationBreaksAfter" value="true"/>
+      <property name="Stacknumber" value="1"/>
+      <property name="Weight" value="10"/>
+      <property name="EconomicValue" value="10"/>
+      <property name="EconomicBundleSize" value="1"/>
+      <property name="SellableToTrader" value="false"/>
+      <property name="ShowQuality" value="true"/>
+      <property class="Action0">
+        <property name="Class" value="Eat"/>
+        <property name="Consume" value="false"/>
+        <property name="MultiUse" value="true"/>
+        <property name="EmptyItem" value="MEmpty_Bottle2LTest"/>
+        <property name="Delay" value="0"/>
+        <property name="Sound_start" value="player_drinking"/>
+      </property>
+      <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+
+      <effect_group tiered="false" name="Drink Tier 0">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/>
+        <display_value name="dDysenteryRisk" value=".12"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchDrink">
+          <requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
+        </triggered_effect>
+      </effect_group>
+      <effect_group name="MDrinkMulti-Use">
+        <passive_effect name="ModSlots" operation="base_set" value="0"/>
+        <passive_effect name="DegradationPerUse" operation="base_set" value="25"/>
+        <passive_effect name="DegradationMax" operation="base_set" value="100"/>
+      </effect_group>
+
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+    </item>
 
     </append>
 </configs>
